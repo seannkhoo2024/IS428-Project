@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Dashboard | IS428 Group</title>
+  <meta name="description" content="IS428 Visual Analytics group project dashboard." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ============ TOP NAV ============ -->
+  <header class="topnav">
+    <div class="nav-inner">
+      <a class="brand" href="#home">Project short name</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="nav" aria-label="Sections">
+        <a href="#home">Home</a>
+        <a href="#problem">Problem</a>
+        <a href="#findings">Key findings</a>
+        <a href="#explore">Dashboards</a>
+        <a href="#deepdive">Deep dive</a>
+        <a href="#recommendations">Recommendations</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <p class="hero-course">IS428 Visual Analytics for Business Intelligence, Group G?T?</p>
+        <h1>Your project title goes here, written as the question you set out to answer</h1>
+        <p class="hero-lead">One or two sentences on what the dashboards let people do. For example: we combine three public datasets into one view so that homebuyers and planners can compare towns side by side.</p>
+        <ul class="team" aria-label="Team members">
+          <li>Member One</li>
+          <li>Member Two</li>
+          <li>Member Three</li>
+          <li>Member Four</li>
+          <li>Member Five</li>
+        </ul>
+        <a class="cta" href="#explore">Open the dashboards</a>
+      </div>
+      <svg class="hero-bars" viewBox="0 0 360 260" aria-hidden="true" focusable="false">
+        <g class="bars"></g>
+        <line x1="0" y1="250" x2="360" y2="250" class="axis" />
+      </svg>
+    </section>
+
+    <!-- ============ PROBLEM ============ -->
+    <section id="problem" class="block">
+      <div class="block-head">
+        <h2>Problem</h2>
+      </div>
+      <div class="block-body prose">
+        <p>Describe the context in plain language. What claim, policy or assumption are you testing? Where does the data come from, and why can't people answer this question today without your dashboard?</p>
+        <p>Keep this to a short paragraph or two. Readers should know what is at stake before they see a chart.</p>
+        <blockquote class="question">
+          <span>Our question</span>
+          Write your main analytical question here, in one sentence, the way you would say it out loud to the professor.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============ KEY FINDINGS ============ -->
+    <section id="findings" class="block">
+      <div class="block-head">
+        <h2>Key findings</h2>
+        <p class="sub">Headline insights from our analysis of <strong>N</strong> records across <strong>N</strong> categories.</p>
+      </div>
+      <div class="block-body">
+        <ul class="findings">
+          <li>
+            <p class="finding-stat">00%</p>
+            <p>First finding. Lead with the number or the comparison, then say what it means.</p>
+          </li>
+          <li>
+            <p class="finding-stat">3 of 32</p>
+            <p>Second finding. Name the specific place, group or category that stands out.</p>
+          </li>
+          <li>
+            <p class="finding-stat">x2.4</p>
+            <p>Third finding. A surprise works well here: something the official figure hides.</p>
+          </li>
+          <li>
+            <p class="finding-stat">Top 5</p>
+            <p>Fourth finding. Point to the dashboard that shows it so readers can check it themselves.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ DASHBOARDS ============ -->
+    <section id="explore" class="block">
+      <div class="block-head">
+        <h2>Explore the dashboards</h2>
+        <p class="sub">Each view is built for a different reader. Pick the one that matches your question.</p>
+      </div>
+
+      <div class="views" role="tablist" aria-label="Dashboard views">
+        <button class="view-tab" role="tab" id="tab-a" aria-controls="view-a" aria-selected="true">
+          <span class="view-name">Audience A view</span>
+          <span class="view-desc">For example, homebuyers comparing towns against their household needs.</span>
+        </button>
+        <button class="view-tab" role="tab" id="tab-b" aria-controls="view-b" aria-selected="false" tabindex="-1">
+          <span class="view-name">Audience B view</span>
+          <span class="view-desc">For example, planners looking for gaps and where to invest first.</span>
+        </button>
+        <button class="view-tab" role="tab" id="tab-c" aria-controls="view-c" aria-selected="false" tabindex="-1">
+          <span class="view-name">Analysis C view</span>
+          <span class="view-desc">For example, how resident sentiment compares with the official numbers.</span>
+        </button>
+      </div>
+
+      <!--
+        HOW TO ADD A TABLEAU CHART
+        1. In Tableau Public, open your viz and click Share. Copy the link.
+        2. Paste it into data-tableau="" on the panel below.
+        3. Optional: data-height="700" changes the chart height (default 600).
+        For a panel with a dropdown, put each link in an <option value="...">.
+        Leave the link empty and the panel shows a placeholder instead.
+      -->
+
+      <!-- ---------- View A ---------- -->
+      <div class="view" role="tabpanel" id="view-a" aria-labelledby="tab-a">
+        <p class="view-intro">One or two sentences on what this audience wants to know and how to use the charts below.</p>
+
+        <article class="viz" data-tableau="" data-height="600">
+          <header class="viz-head">
+            <h3>Chart 1: map of the main measure by area</h3>
+          </header>
+          <div class="viz-frame"></div>
+          <dl class="viz-notes">
+            <div><dt>What this shows</dt><dd>Describe the marks, what colour and size encode, and which filters or dropdowns to use.</dd></div>
+            <div><dt>Key insight</dt><dd>The one pattern a reader should walk away with, with a specific example.</dd></div>
+            <div><dt>Why it matters</dt><dd>Connect the insight back to the problem statement.</dd></div>
+          </dl>
+        </article>
+
+        <article class="viz" data-height="600">
+          <header class="viz-head">
+            <h3>Chart 2: gap by category</h3>
+            <label class="viz-switch">
+              <span>Category</span>
+              <select>
+                <option value="">Category 1</option>
+                <option value="">Category 2</option>
+                <option value="">Category 3</option>
+              </select>
+            </label>
+          </header>
+          <div class="viz-frame"></div>
+          <dl class="viz-notes">
+            <div><dt>What this shows</dt><dd>This panel switches between several Tableau sheets with the dropdown above.</dd></div>
+            <div><dt>Key insight</dt><dd>Describe what changes as readers switch categories.</dd></div>
+            <div><dt>Why it matters</dt><dd>Connect the insight back to the problem statement.</dd></div>
+          </dl>
+        </article>
+
+        <article class="viz" data-tableau="" data-height="600">
+          <header class="viz-head">
+            <h3>Chart 3: compare any two areas</h3>
+          </header>
+          <div class="viz-frame"></div>
+          <dl class="viz-notes">
+            <div><dt>What this shows</dt><dd>Describe the chart and its controls.</dd></div>
+            <div><dt>Key insight</dt><dd>The one pattern a reader should walk away with.</dd></div>
+            <div><dt>Why it matters</dt><dd>Connect the insight back to the problem statement.</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <!-- ---------- View B ---------- -->
+      <div class="view" role="tabpanel" id="view-b" aria-labelledby="tab-b" hidden>
+        <p class="view-intro">One or two sentences on what this audience wants to know and how to use the charts below.</p>
+
+        <article class="viz" data-tableau="" data-height="650">
+          <header class="viz-head">
+            <h3>Chart 4: coverage at the most detailed level</h3>
+          </header>
+          <div class="viz-frame"></div>
+          <dl class="viz-notes">
+            <div><dt>What this shows</dt><dd>Describe the chart and its controls.</dd></div>
+            <div><dt>Key insight</dt><dd>The one pattern a reader should walk away with.</dd></div>
+            <div><dt>Why it matters</dt><dd>Connect the insight back to the problem statement.</dd></div>
+          </dl>
+        </article>
+
+        <article class="viz" data-tableau="" data-height="650">
+          <header class="viz-head">
+            <h3>Chart 5: priority overview</h3>
+          </header>
+          <div class="viz-frame"></div>
+          <dl class="viz-notes">
+            <div><dt>What this shows</dt><dd>Describe the chart and its controls.</dd></div>
+            <div><dt>Key insight</dt><dd>The one pattern a reader should walk away with.</dd></div>
+            <div><dt>Why it matters</dt><dd>Connect the insight back to the problem statement.</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <!-- ---------- View C ---------- -->
+      <div class="view" role="tabpanel" id="view-c" aria-labelledby="tab-c" hidden>
+        <p class="view-intro">Explain the method in a sentence (for example, how sentiment scores were calculated), then how to read the charts.</p>
+
+        <article class="viz" data-tableau="" data-height="600">
+          <header class="viz-head">
+            <h3>Chart 6: measure vs. outcome scatter</h3>
+          </header>
+          <div class="viz-frame"></div>
+          <dl class="viz-notes">
+            <div><dt>What this shows</dt><dd>Describe the chart, its reference lines and what each quadrant means.</dd></div>
+            <div><dt>Key insight</dt><dd>The one pattern a reader should walk away with.</dd></div>
+            <div><dt>Why it matters</dt><dd>Connect the insight back to the problem statement.</dd></div>
+          </dl>
+        </article>
+
+        <article class="viz" data-tableau="" data-height="520">
+          <header class="viz-head">
+            <h3>Chart 7: gap by category, dumbbell chart</h3>
+          </header>
+          <div class="viz-frame"></div>
+          <dl class="viz-notes">
+            <div><dt>What this shows</dt><dd>Describe the chart and its controls.</dd></div>
+            <div><dt>Key insight</dt><dd>The one pattern a reader should walk away with.</dd></div>
+            <div><dt>Why it matters</dt><dd>Connect the insight back to the problem statement.</dd></div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ DEEP DIVE ============ -->
+    <section id="deepdive" class="block">
+      <div class="block-head">
+        <h2>Deep dive</h2>
+        <p class="sub">Three cases that explain the overall pattern, followed by the themes behind them.</p>
+      </div>
+      <div class="block-body">
+        <div class="spotlights">
+          <article class="spot spot-best">
+            <p class="spot-tag">Best performer</p>
+            <h3>Area name</h3>
+            <ul>
+              <li>Supporting fact with a number</li>
+              <li>Supporting fact with a number</li>
+              <li>Supporting fact with a number</li>
+            </ul>
+            <p class="spot-take">Why this case matters, in one sentence.</p>
+          </article>
+          <article class="spot spot-worst">
+            <p class="spot-tag">Most urgent</p>
+            <h3>Area name</h3>
+            <ul>
+              <li>Supporting fact with a number</li>
+              <li>Supporting fact with a number</li>
+              <li>Supporting fact with a number</li>
+            </ul>
+            <p class="spot-take">Why this case matters, in one sentence.</p>
+          </article>
+          <article class="spot spot-odd">
+            <p class="spot-tag">Anomaly</p>
+            <h3>Area name</h3>
+            <ul>
+              <li>Supporting fact with a number</li>
+              <li>Supporting fact with a number</li>
+              <li>Supporting fact with a number</li>
+            </ul>
+            <p class="spot-take">Why this case matters, in one sentence.</p>
+          </article>
+        </div>
+
+        <div class="themes">
+          <details>
+            <summary>Theme one: a pattern that shows up across several charts</summary>
+            <div class="theme-body"><p>Explain the pattern, the evidence from the dashboards, and what likely causes it.</p></div>
+          </details>
+          <details>
+            <summary>Theme two: where the official number and the data disagree</summary>
+            <div class="theme-body"><p>Explain the pattern, the evidence from the dashboards, and what likely causes it.</p></div>
+          </details>
+          <details>
+            <summary>Theme three: a change over time</summary>
+            <div class="theme-body"><p>Explain the pattern, the evidence from the dashboards, and what likely causes it.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RECOMMENDATIONS ============ -->
+    <section id="recommendations" class="block">
+      <div class="block-head">
+        <h2>Recommendations</h2>
+        <p class="sub">What we would do with these findings, and who should act on them.</p>
+      </div>
+      <div class="block-body">
+        <ol class="recs">
+          <li>
+            <h3>Fix the most urgent gaps first</h3>
+            <p>State the action, who owns it, and which finding supports it.</p>
+          </li>
+          <li>
+            <h3>Measure quality, not only quantity</h3>
+            <p>State the action, who owns it, and which finding supports it.</p>
+          </li>
+          <li>
+            <h3>Publish the method behind the headline figure</h3>
+            <p>State the action, who owns it, and which finding supports it.</p>
+          </li>
+          <li>
+            <h3>Use the best performer as a model</h3>
+            <p>State the action, who owns it, and which finding supports it.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-title">IS428 Visual Analytics for Business Intelligence</p>
+        <p>Singapore Management University, Group G?T?</p>
+      </div>
+      <div>
+        <p class="footer-title">Data sources</p>
+        <p>Dataset one (data.gov.sg), dataset two, dataset three</p>
+      </div>
+      <div>
+        <p class="footer-title">Built with</p>
+        <p>Tableau Public, HTML and CSS</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
