@@ -213,10 +213,16 @@ main {
   list-style: none; padding: 0;
   margin-top: 48px;
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 2px solid var(--ink);
+  gap: 16px;
 }
-.stat { padding: 18px 24px 4px 0; }
-.stat + .stat { padding-left: 24px; border-left: 1px solid var(--line); }
+.stat {
+  padding: 18px 20px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(22, 35, 58, 0.05);
+}
+.stat + .stat { padding-left: 20px; border-left: 1px solid var(--line); }
 .stat-num {
   font-family: var(--serif);
   font-weight: 700;
@@ -258,7 +264,7 @@ h4 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
   gap: 32px;
 }
 .overview-part + .overview-part { padding-top: 28px; border-top: 1px solid var(--line); }
-.overview-part .lead { max-width: 80ch; margin-top: 10px; }
+.overview-part .lead { max-width: none; margin-top: 10px; }
 .overview-part-title {
   margin-top: 10px;
   font-family: var(--serif);
@@ -267,7 +273,7 @@ h4 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
 }
 .overview-question {
   margin: 16px 0 0;
-  max-width: 80ch;
+  max-width: none;
   padding: 2px 0 2px 22px;
   border-left: 4px solid var(--down);
 }
@@ -763,9 +769,10 @@ h4 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
 .coverage th { font-weight: 600; color: var(--muted); font-size: 14px; }
 .coverage .num { text-align: right; font-variant-numeric: tabular-nums; }
 .coverage tbody tr:last-child td { border-bottom: 0; }
-.coverage-copy { max-width: var(--text-max); padding-top: 30px; }
+#data-methods .block-head { max-width: none; }
+.coverage-copy { max-width: none; padding-top: 30px; }
 
-.accordions { margin-top: 40px; max-width: 960px; display: flex; flex-direction: column; gap: 10px; }
+.accordions { margin-top: 40px; max-width: none; display: flex; flex-direction: column; gap: 10px; }
 .accordions details {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -844,8 +851,7 @@ h4 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
 @media (max-width: 640px) {
   body { font-size: 16px; }
   .hero-stats { grid-template-columns: 1fr; }
-  .stat { padding: 16px 0; }
-  .stat + .stat { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+  .stat + .stat { padding-left: 20px; border-left: 1px solid var(--line); }
   .lead, .block-lead { font-size: 17.5px; }
   .chapter { padding-top: 64px; }
   .chapter-feature { margin-left: calc(-1 * var(--gutter)); margin-right: calc(-1 * var(--gutter)); border-radius: 0; padding-left: var(--gutter); padding-right: var(--gutter); }
