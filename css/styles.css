@@ -28,6 +28,10 @@
   --nus: #f28e2b; --ntu: #4e79a7; --smu: #76b7b2;
   --sit: #e15759; --suss: #59a14f; --sutd: #edc948;
 
+  /* Measure Names palette (Chapter 1 dashboard) */
+  --mn-fulltime: #8cd17d; --mn-nonfull: #b4a7d6; --mn-median: #f4b6b6;
+  --mn-medianpay: #4e79a7;
+
   --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
   --sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
 
@@ -354,11 +358,38 @@ h4 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
 .chapter-feature .how-to strong { color: #fff; }
 
 /* ---------- University key ---------- */
-.uni-key { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-bottom: 16px; font-size: 14px; }
-.uni-key-label { color: var(--muted); }
-.uni-key ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
-.uni-key li { display: flex; align-items: center; gap: 6px; font-weight: 600; color: var(--ink); }
-.swatch { width: 12px; height: 12px; border-radius: 50%; background: var(--c); display: inline-block; }
+.uni-key {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px;
+  margin-bottom: 16px; font-size: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 18px;
+  box-shadow: 0 1px 2px rgba(22, 35, 58, 0.04);
+}
+.uni-key-label {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-right: 16px;
+  border-right: 1px solid var(--line);
+}
+.uni-key ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 14px; }
+.uni-key li {
+  display: flex; align-items: center; gap: 7px;
+  font-weight: 600; color: var(--ink);
+  background: var(--page);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 12px 4px 8px;
+}
+.swatch {
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--c); display: inline-block;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--c) 30%, transparent);
+}
 
 /* ---------- Embed slot ---------- */
 .viz-slot {
