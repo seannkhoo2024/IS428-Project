@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-17T03:36:15.690Z",
+        "reason": "Claude: stats, takeaways and accordions use hairline column dividers, not boxed containers; first column is flush with the page grid by design"
+      }
+    ]
+  }
+}
