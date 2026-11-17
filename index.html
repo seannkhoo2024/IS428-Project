@@ -33,6 +33,7 @@
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" class="nav" aria-label="Sections">
         <a href="#home">Home</a>
+        <a href="#team">Team</a>
         <a href="#puzzle">The Puzzle</a>
         <a href="#what-where">What &amp; Where</a>
         <a href="#trade-offs">Trade-offs</a>
@@ -41,7 +42,6 @@
         <a href="#does-it-last">Does It Last</a>
         <a href="#report-card">Report Card</a>
         <a href="#data-methods">Data &amp; Methods</a>
-        <a href="#team">Team</a>
       </nav>
     </div>
   </header>
@@ -54,6 +54,17 @@
         <div class="hero-text">
           <p class="hero-course">IS428 Visual Analytics, Group 2</p>
           <h1 id="hero-title">Which Degree Pays Off?</h1>
+          <div id="team" class="hero-team" aria-labelledby="hero-team-title">
+            <h2 id="hero-team-title">Team</h2>
+            <p class="hero-team-course">IS428 Visual Analytics, Group 2</p>
+            <ul class="team-list">
+              <li>Angel Tan</li>
+              <li>Jerald Lai</li>
+              <li>Seann Khoo</li>
+              <li>Shernice Oh</li>
+              <li>Wesley Tan</li>
+            </ul>
+          </div>
           <p class="hero-sub">A decade of Singapore graduate outcomes, in real dollars, across 6 universities and 183 programmes.</p>
           <div class="hero-ctas">
             <a class="btn btn-primary" href="#puzzle">Start the story</a>
@@ -117,6 +128,7 @@
         </li>
       </ul>
     </section>
+
 
     <!-- ================= OVERVIEW: PROBLEM, STAKEHOLDERS, STAKES ================= -->
     <section id="overview" class="overview-wrap" aria-labelledby="overview-title">
@@ -956,34 +968,104 @@
     <section id="takeaways" class="block" aria-labelledby="take-title">
       <div class="block-head">
         <h2 id="take-title">Key takeaways</h2>
-        <p class="block-lead">Six things we'd want a student and their parents to know, in the order the story tells them.</p>
+        <p class="block-lead">Eight things we'd want a student and their parents to know, in the order the story tells them.</p>
       </div>
       <ol class="takeaways">
         <li>
-          <p class="take-head">Real starting pay is up about a quarter since 2013, but full-time permanent employment is at its lowest since 2020 (73.4%).</p>
-          <p class="take-detail">The slide is broad-based, not a weak-sector problem: every university's median permanent rate fell between 2022 and 2025.</p>
+          <div class="take-body">
+            <p class="take-head">Pay is up, permanent jobs are down, and fewer are finding any job at all. Real starting pay is up 23.9% since 2013, but full-time permanent employment is at its lowest since 2020 (73.4%) — and only 83.3% of 2025 graduates found any job within six months, down from 94.7% in 2020.</p>
+            <p class="take-detail">Broad-based, not a weak-sector problem: every university's median permanent rate fell between 2022 and 2025 (NUS 91.4%→79.1%, NTU 87.1%→71.4%, SUSS 83.3%→69.7%).</p>
+          </div>
         </li>
         <li>
-          <p class="take-head">Field matters (IDT leads every year; Health Sciences slid from 2nd to 8th), but the spread within a field is larger than the gaps between most fields.</p>
-          <p class="take-detail">Field medians run S$3,741–4,996, a narrower range than the spread of programmes inside most single fields.</p>
+          <div class="take-body">
+            <p class="take-head">Field matters, but within-field spread dwarfs between-field gaps. IDT has topped the ranking every year while Health Sciences slid from 2nd to 8th — yet field medians run a narrow S$3,741–4,996.</p>
+            <p class="take-detail">Inside the top fields, programmes differ by more than S$2,000 a month (IDT: S$4,464–6,842; Business: S$3,446–5,907).</p>
+          </div>
         </li>
         <li>
-          <p class="take-head">The same discipline can differ by 25–40% across universities (Computer Science: 40%).</p>
-          <p class="take-detail">University-level medians hide this: a university's game-design Computer Science can pay like an arts degree while its other Computer Science programme matches the top schools.</p>
+          <div class="take-body">
+            <p class="take-head">The same discipline can differ by 25–40% across universities. Computer Science is the widest at 40%.</p>
+            <p class="take-detail">University-level medians hide this: one university's games-flavoured Computer Science programme pays S$4,489 while its other Computer Science programme matches the top schools at S$6,301.</p>
+          </div>
         </li>
         <li>
-          <p class="take-head">Pay and job security are only weakly related (r = 0.29), and higher pay comes with a wider spread.</p>
-          <p class="take-detail">2025's 118 programmes split almost evenly across high/low pay and high/low employment, so no single profile dominates.</p>
+          <div class="take-body">
+            <p class="take-head">Pay and job security are only weakly linked, and higher pay buys less predictability. Correlation between pay and permanent rate is just r = 0.29; pay and outcome spread correlate at r = 0.48, in the other direction.</p>
+            <p class="take-detail">2025's 118 programmes split almost evenly: 32 strong on both pay and employment, 29 weak on both — so a high median is no guarantee of a safe or predictable one.</p>
+          </div>
         </li>
         <li>
-          <p class="take-head">Fees by student group change payback roughly fourfold (7.4 to 32.5 months), more than field choice does for citizens.</p>
-          <p class="take-detail">Two programmes with identical pay can have very different paybacks once fees are added: SMU Computer Science and NUS Information Systems both pay S$5,907, but citizen payback is 7.6 vs 5.4 months.</p>
+          <div class="take-body">
+            <p class="take-head">Fees change payback roughly fourfold, more than programme choice does for a citizen. 7.4 to 32.5 months, depending only on student group.</p>
+            <p class="take-detail">Two programmes can pay identically and still diverge: SMU Computer Science and NUS Information Systems both pay S$5,907, but citizen payback is 7.6 vs 5.4 months — programme and fee-tier effects compound, they don't cancel out.</p>
+          </div>
         </li>
         <li>
-          <p class="take-head">The gap between programmes widened from S$233 to S$664 (interquartile range, 2013 → 2025), a small set of programmes beat their field every year, and graduate supply has not visibly depressed pay.</p>
-          <p class="take-detail">NUS Computer Science, NUS Business Administration (Hons) and NTU Accountancy &amp; Business beat their field median in all 13 years on record.</p>
+          <div class="take-body">
+            <p class="take-head">A small set of programmes beat their field every year, not just in one strong cohort. Persistence, not a lucky year, is the stronger signal.</p>
+            <p class="take-detail">NUS Computer Science, NUS Business Administration (Hons) and NTU Accountancy &amp; Business all beat their field median in all 13 years on record.</p>
+          </div>
+        </li>
+        <li>
+          <div class="take-body">
+            <p class="take-head">Growing intakes have not visibly pushed pay down, even as the gap between programmes widened. Supply isn't destiny.</p>
+            <p class="take-detail">The interquartile range across programmes widened from S$233 to S$664 (2013 → 2025), yet intake growth against pay change shows no clear downward slope.</p>
+          </div>
+        </li>
+        <li>
+          <div class="take-body">
+            <p class="take-head">About 15% of programme-year figures deserve a second look before you act on them. Reliability isn't uniform.</p>
+            <p class="take-detail">It varies by university (NTU/SIT 84%, SUSS 85%, SMU 82%, NUS 75%, SUTD 74%), clustering in niche programmes and years when programmes were introduced or regrouped — check the flag before treating any single number as fact.</p>
+          </div>
         </li>
       </ol>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq" class="block" aria-labelledby="faq-title">
+      <div class="block-head">
+        <h2 id="faq-title">Common questions</h2>
+        <p class="block-lead">Quick answers to what most readers ask, each pointing back to the chapter it comes from.</p>
+      </div>
+      <div class="accordions">
+        <details>
+          <summary><span>Does a more expensive university always pay more?</span><span class="acc-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="acc-body">
+            <p>No. The same discipline can differ by 25–40% across universities (Computer Science: 40%), and a cheaper or closer university can match or beat a pricier one in the same field. University-level averages hide this — see <a href="#where-you-study">Where You Study</a>.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span>Is a high starting salary a sign of a secure job?</span><span class="acc-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="acc-body">
+            <p>Not reliably. Pay and full-time permanent rate correlate at only r = 0.29, and the best-paid programmes tend to have the widest spread of outcomes (r = 0.48). Plenty of high-pay programmes score lower on employment security — see <a href="#trade-offs">Trade-offs</a>.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span>How much does my student group change the numbers?</span><span class="acc-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="acc-body">
+            <p>A lot, on cost. The fee gap between Citizen, PR, ASEAN, Other international and Non-subsidised rates changes the payback period for the same degree roughly fourfold — 7.4 to 32.5 months. Fees matter as much as, or more than, which programme you pick — see <a href="#cost">What It Costs</a> and <a href="#payback">Paying It Back</a>.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span>Can I trust the numbers for one specific programme?</span><span class="acc-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="acc-body">
+            <p>Check the reliability flag first. About 15% of programme-year rows rest on fewer than 30 respondents or have no reported figure — a 100% permanent rate from 3 respondents looks identical to one from 300 without that flag. See <a href="#data-methods">Data &amp; Methods</a>.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span>Is this year's top programme reliably the best?</span><span class="acc-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="acc-body">
+            <p>Not necessarily. Only a small set of programmes beat their field median in all 13 years on record — a single strong cohort is not the same as a lasting advantage. Favour programmes that are consistently strong, not just the current leader — see <a href="#does-it-last">Does It Last</a>.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span>Is the pay rise since 2013 as good as it looks?</span><span class="acc-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="acc-body">
+            <p>Partly. Real starting pay is up 23.9% since 2013, already adjusted for inflation — but the full-time permanent rate fell to 73.4% in 2025, the lowest since 2020. The headline pay gain comes with a job-security trade-off, not a free win — see <a href="#puzzle">The Puzzle</a>.</p>
+          </div>
+        </details>
+      </div>
     </section>
 
     <!-- ================= RECOMMENDATIONS ================= -->
@@ -993,18 +1075,48 @@
         <p class="block-lead">What we'd tell each group, and the finding behind each piece of advice.</p>
       </div>
       <div class="recs">
-        <article>
-          <span class="rec-mark">ST</span>
-          <h3>Prospective students and parents</h3>
+        <article id="rec-ls" style="--c:var(--nus); border-top-color:var(--nus)">
+          <span class="rec-mark">LS</span>
+          <h3>Local students</h3>
           <ul>
-            <li><strong>Compare within a discipline, not by university average.</strong> Computer Science alone spans S$4,489–6,301 across universities, a 40% range a school's overall median would hide.</li>
-            <li><strong>Check full-time permanent rates and the P25–P75 range, not only the median.</strong> A high median pay says nothing about how many graduates actually land a permanent job, or how wide the outcomes are around it.</li>
-            <li><strong>Use payback for your own student group.</strong> Citizen, PR, ASEAN, other international and non-subsidised rates can turn a 7-month payback into one over four times longer.</li>
-            <li><strong>Treat programmes flagged small-sample or not reported with caution.</strong> About 15% of all programme-year rows in this dataset rest on fewer than 30 respondents or have no reported figure at all.</li>
+            <li><strong>Compare within a discipline, not by university average.</strong> Computer Science alone spans S$4,489–6,301 across universities in 2025, a 40% gap a school's overall median would hide; Business spans 33%, Computer Engineering 24%.</li>
+            <li><strong>Weigh the permanent-job rate, not just the pay rise.</strong> Real pay is up 23.9% since 2013, but the full-time permanent rate fell to 73.4% in 2025 — the lowest since 2020 — and the decline is broad-based, not one weak university (NUS 91.4%→79.1%, NTU 87.1%→71.4%, SUSS 83.3%→69.7% from 2022–2025).</li>
+            <li><strong>Your citizen-rate payback is the cheapest case, not the typical one.</strong> At roughly 7 months, it's easy to assume any degree pays for itself quickly — but this number moves fourfold just by changing fee tier, so don't let it anchor expectations for peers in other fee groups.</li>
+            <li><strong>Check the reliability flag before trusting any single programme.</strong> About 15% of programme-year rows rest on fewer than 30 respondents or have no reported figure — a 100% permanent rate from 3 respondents looks identical to one from 300 without that flag.</li>
           </ul>
         </article>
-        <article>
-          <span class="rec-mark">GES</span>
+        <article id="rec-is" style="--c:var(--ntu); border-top-color:var(--ntu)">
+          <span class="rec-mark">IS</span>
+          <h3>International students</h3>
+          <ul>
+            <li><strong>Run the payback math at your own fee tier, not the citizen default.</strong> The same degree's payback period stretches from about 7 months (citizen) to 33 months (non-subsidised) — a fourfold difference that matters more to you than field choice does to a citizen.</li>
+            <li><strong>Weigh the falling permanent-job rate against a cost you can't easily recover.</strong> If a programme's full-time permanent rate is sliding, that risk lands harder on a non-citizen who has already paid several times the citizen fee.</li>
+            <li><strong>Favour programmes strong on both pay and employment, not just pay.</strong> Only 32 of 118 programmes in 2025 scored high on both; the correlation between pay and permanent rate is just r = 0.29, so a high salary alone is a weak signal of job security.</li>
+            <li><strong>Look for consistency across cohorts, not one good year.</strong> A programme that beats its field most years is a safer bet than one riding a single strong cohort, since you're committing years and a large fee before you know which kind you picked.</li>
+          </ul>
+        </article>
+        <article id="rec-pa" style="--c:var(--smu); border-top-color:var(--smu)">
+          <span class="rec-mark">PA</span>
+          <h3>Parents</h3>
+          <ul>
+            <li><strong>Treat "pays more" and "finds a stable job" as two separate questions.</strong> Pay rose a real 23.9% since 2013 while the permanent-job rate fell to its lowest since 2020 — a programme can look better on one measure and worse on the other.</li>
+            <li><strong>Price the whole decision, not just the tuition line.</strong> The fee gap between student groups compounds with years of foregone income; a cheaper university can still mean a longer payback if its pay premium doesn't keep pace.</li>
+            <li><strong>A high median hides how wide the outcomes really are.</strong> Better-paid programmes tend to have a wider spread of outcomes (r = 0.48) — NUS Business Administration's typical P25–P75 range is 83% of its own median, so the "average" graduate may not look like your child.</li>
+            <li><strong>Don't let one flagship programme set expectations for its whole field.</strong> University averages can hide specific programmes that are far weaker or stronger than the headline number suggests.</li>
+          </ul>
+        </article>
+        <article id="rec-pm" style="--c:var(--sit); border-top-color:var(--sit)">
+          <span class="rec-mark">PM</span>
+          <h3>Policymakers</h3>
+          <ul>
+            <li><strong>Read the permanent-rate decline as a labour-market signal, not a degree-choice failure.</strong> Every university's median permanent rate fell between 2022 and 2025 — it's broad-based, so capping specific programme intakes over pay-dilution fears would target the wrong lever.</li>
+            <li><strong>Target support using both axes, not pay alone.</strong> 29 of 118 programmes in 2025 scored low on both pay and employment — a distinct, more urgent group from the 30 that are high-pay/low-security.</li>
+            <li><strong>Check whether subsidies track the actual payback gap.</strong> Fee-tier differences alone turn a roughly 7-month payback into about 33 months; worth asking whether Tuition Grant and subsidy levels keep pace, especially for PR and ASEAN-international groups.</li>
+            <li><strong>Cite programme-level numbers carefully.</strong> With about 15% of rows flagged small-sample or not reported, any policy argument built on a single programme's headline figure should check the reliability flag first.</li>
+          </ul>
+        </article>
+        <article style="border-top-color:var(--ink)">
+          <span class="rec-mark" style="--c:var(--ink)">GES</span>
           <h3>Universities and MOE</h3>
           <ul>
             <li><strong>Publish GES with response counts for every row,</strong> as Table T15 began doing in 2025. Without it, a 100% permanent rate from 3 respondents looks identical to one from 300.</li>
@@ -1013,8 +1125,8 @@
             <li><strong>Report fees alongside outcomes.</strong> Pay tables and fee schedules currently live on separate pages, making the payback question harder to answer than it needs to be.</li>
           </ul>
         </article>
-        <article>
-          <span class="rec-mark">V2</span>
+        <article style="border-top-color:var(--down)">
+          <span class="rec-mark" style="--c:var(--down)">V2</span>
           <h3>Future versions of this tool</h3>
           <ul>
             <li><strong>Add polytechnic GES for diploma-versus-degree context.</strong> Right now this tool can't answer whether a degree beats a diploma in the same field.</li>
@@ -1101,6 +1213,26 @@
       </div>
 
       <div class="accordions">
+        <details>
+          <summary><span>Glossary</span><span class="acc-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <div class="acc-body">
+            <p class="acc-tldr">Short definitions for terms used across the nine chapters.</p>
+            <ul>
+              <li><strong>GES (Graduate Employment Survey):</strong> the annual MOE/MOM survey of fresh graduates, about six months after graduation, that this whole site is built from.</li>
+              <li><strong>Full-time permanent rate:</strong> share of surveyed graduates in a full-time, permanent job — the main job-security measure used throughout.</li>
+              <li><strong>Median pay:</strong> the middle value of gross monthly starting salaries — half of graduates earn more, half earn less. Used instead of the mean so a handful of very high or low salaries can't skew the figure.</li>
+              <li><strong>P25 / P75 (and the P25–P75 range):</strong> the salary below which 25% and 75% of graduates fall. The gap between them shows how spread out outcomes are around the median, not just the typical value.</li>
+              <li><strong>IQR (interquartile range):</strong> P75 minus P25 — one number for how wide a programme's or field's pay spread is.</li>
+              <li><strong>Real 2024 S$:</strong> every salary and fee restated in 2024 dollars using CPI, so figures from different survey years can be compared directly without inflation distorting the comparison.</li>
+              <li><strong>Reliability flags:</strong> <em>Reliable</em> (fresh graduates, enough respondents), <em>fewer than 30 respondents</em>, <em>not reported</em>, <em>salary suppressed</em> (2025 only), and <em>follow-up survey</em> (a later, still-reliable resurvey for fields like Law and Medicine).</li>
+              <li><strong>Student group:</strong> the fee tier a student is charged — Singapore Citizen, Permanent Resident, International (ASEAN), International (Other), or Non-subsidised (no Tuition Grant).</li>
+              <li><strong>Tuition Grant:</strong> the Singapore government subsidy that lowers fees for Citizens, PRs and ASEAN-international students; Non-subsidised students pay without it.</li>
+              <li><strong>Payback (months):</strong> total tuition for the degree divided by median gross monthly starting pay — how many months of starting salary it takes to cover the tuition bill. See the "Payback definition" item below for what it ignores.</li>
+              <li><strong>Field / discipline:</strong> the MOE GES 2025 groupings used to compare programmes with similar subject matter, e.g. Information &amp; Digital Technologies, Business, Health Sciences.</li>
+              <li><strong>r (correlation coefficient):</strong> a number from −1 to 1 showing how closely two measures move together; values near 0 (as between pay and permanent rate, r = 0.29) mean a weak relationship.</li>
+            </ul>
+          </div>
+        </details>
         <details>
           <summary><span>Data sources</span><span class="acc-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
           <div class="acc-body">
@@ -1197,21 +1329,6 @@
       </div>
     </section>
 
-    <!-- ================= TEAM ================= -->
-    <section id="team" class="block team" aria-labelledby="team-title">
-      <div class="block-head">
-        <h2 id="team-title">Team</h2>
-        <p class="block-lead">IS428 Visual Analytics for Business Intelligence, G2, Group 2</p>
-      </div>
-      <ul class="team-list">
-        <li>Angel Tan</li>
-        <li>Jerald Lai</li>
-        <li>Seann Khoo</li>
-        <li>Shernice Oh</li>
-        <li>Wesley Tan</li>
-      </ul>
-      <!-- <p class="ack">Thanks to our IS428 instructor for feedback that shaped the coverage page, the bump and slope charts and the head-to-head view, and to MOE, MOM and SingStat for publishing the data.</p> -->
-    </section>
   </main>
 
   <!-- <footer class="footer">
