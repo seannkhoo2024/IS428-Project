@@ -348,7 +348,7 @@ h3 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
 .viz-slot.is-embedded .viz-placeholder,
 .viz-canvas:has(tableau-viz, iframe, .tableauPlaceholder) .viz-placeholder { display: none; }
 
-.viz-slot figcaption { margin-top: 12px; font-size: 14px; color: var(--muted); max-width: 56ch; }
+.viz-slot figcaption { margin-top: 12px; font-size: 14px; color: var(--muted); }
 .chapter-feature .viz-slot figcaption { color: #b9c6d5; }
 .viz-slot .src { display: block; margin-top: 2px; font-size: 13px; }
 .viz-mobile-note { display: none; margin-top: 6px; font-size: 14px; font-weight: 500; color: var(--down); }
@@ -373,10 +373,10 @@ h3 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
 .notes dt { font-weight: 600; color: var(--ink); font-size: 15px; margin-bottom: 6px; }
 .notes > div:nth-child(2) dt { color: var(--up); }
 .notes dd { font-size: 15.5px; line-height: 1.6; }
-.how-to { margin-top: 16px; font-size: 15.5px; color: var(--text); max-width: 64ch; }
+.how-to { margin-top: 16px; font-size: 15.5px; color: var(--text); }
 .how-to strong { color: var(--ink); }
 .definition {
-  margin-top: 12px; font-size: 15px; color: var(--text); max-width: 64ch;
+  margin-top: 12px; font-size: 15px; color: var(--text);
   padding: 12px 16px; background: var(--down-soft); border-radius: 6px;
 }
 
