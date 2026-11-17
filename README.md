@@ -53,13 +53,13 @@ Search `index.html` for `id="viz-1"` (etc.) and use **one** of these options.
 <figure class="viz-slot" id="viz-1" data-dashboard="1 The Puzzle" ... data-src="https://public.tableau.com/views/Prrp_v2/1ThePuzzle">
 ```
 
-The script loads the dashboard only when the reader scrolls near it (eight vizzes on one page are heavy), hides the placeholder, and points the "Open in Tableau Public" button at the same link. Both `/views/...` links and `/app/profile/<name>/viz/...` links work.
+The script loads the dashboard only when the reader scrolls near it (eight vizzes on one page are heavy), hides the placeholder, and points the "Open in Tableau Public" button at the same link. Both `/views/...` links and `/app/profile/<name>/viz/...` links work. The link Tableau shows right after publishing (`https://public.tableau.com:9443/views/...?:redirect=auth...`) only works while you are signed in; the script removes the `:9443` and everything after `?`, but the cleanest value is just `https://public.tableau.com/views/Prrp_v2/<DashboardName>`, e.g. `https://public.tableau.com/views/Prrp_v2/1ThePuzzle`.
 
 **Option B: uncomment the snippet.** Inside each slot there is:
 
 ```html
 <!-- Replace PUBLIC_URL with the Tableau Public share link for this dashboard -->
-<!-- <tableau-viz src="PUBLIC_URL" width="1200" height="820" toolbar="bottom" hide-tabs></tableau-viz> -->
+<!-- <tableau-viz src="PUBLIC_URL" width="1200" height="870" toolbar="bottom" hide-tabs></tableau-viz> -->
 ```
 
 Uncomment the second line and replace `PUBLIC_URL`. The placeholder hides itself. This loads immediately rather than lazily. Also add the link to `data-src` so the "Open in Tableau Public" button works.
@@ -68,7 +68,7 @@ Uncomment the second line and replace `PUBLIC_URL`. The placeholder hides itself
 
 The "Copy embed code" button on each slot copies a ready-made `<tableau-viz>` line for that dashboard.
 
-Each slot keeps the dashboards' 1200 × 820 shape. Below 900 px wide it scrolls sideways and shows "Best viewed on a laptop".
+Each slot is 1200 × 870: the 1200 × 820 dashboard plus about 50 px for Tableau's toolbar. Below 900 px wide it scrolls sideways and shows "Best viewed on a laptop".
 
 ## 3. Add preview images
 

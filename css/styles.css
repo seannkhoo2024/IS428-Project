@@ -316,7 +316,7 @@ h3 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
   width: 100%;
   max-width: 1200px;
   min-width: 900px;            /* below 900px the slot scrolls sideways */
-  aspect-ratio: 1200 / 820;
+  aspect-ratio: 1200 / 870;   /* 820 px dashboard + ~50 px Tableau toolbar */
   margin: 0 auto;
   background: var(--surface);
   border-radius: 8px;

@@ -58,18 +58,22 @@
   // <figure class="viz-slot">. Both link styles work:
   //   https://public.tableau.com/views/<Workbook>/<Dashboard>
   //   https://public.tableau.com/app/profile/<name>/viz/<Workbook>/<Dashboard>
+  //   https://public.tableau.com:9443/views/...?:redirect=auth&...  (the link Tableau
+  //   shows right after publishing; the port and settings are stripped here)
   function toViewsUrl(link) {
     if (!link) return "";
     let url;
     try { url = new URL(link.trim()); } catch (_) { return ""; }
-    const profile = url.pathname.match(/\/viz\/([^/]+)\/([^/?#]+)/);
-    if (profile) return "https://public.tableau.com/views/" + profile[1] + "/" + profile[2];
+    const m = url.pathname.match(/\/(?:views|viz)\/([^/]+)\/([^/?#]+)/);
+    if (m && /(^|\.)tableau\.com$/.test(url.hostname)) {
+      return "https://public.tableau.com/views/" + m[1] + "/" + m[2];
+    }
     return url.origin + url.pathname;
   }
 
   function snippetFor(src) {
     return '<tableau-viz src="' + (src || "PUBLIC_URL") +
-      '" width="1200" height="820" toolbar="bottom" hide-tabs></tableau-viz>';
+      '" width="1200" height="870" toolbar="bottom" hide-tabs></tableau-viz>';
   }
 
   function mountViz(slot, src) {
@@ -78,7 +82,7 @@
     const viz = document.createElement("tableau-viz");
     viz.setAttribute("src", src);
     viz.setAttribute("width", "1200");
-    viz.setAttribute("height", "820");
+    viz.setAttribute("height", "870");
     viz.setAttribute("toolbar", "bottom");
     viz.setAttribute("hide-tabs", "");
     canvas.appendChild(viz);
