@@ -240,6 +240,15 @@
         <p class="viz-mobile-note">Best viewed on a laptop; on mobile, rotate or open in Tableau Public.</p>
       </figure>
 
+      <div class="read-guide">
+        <p class="read-guide-title">How to read each chart</p>
+        <ol>
+          <li><strong>KPI tiles (top):</strong> two single numbers for 2025 — median starting pay and the full-time permanent-job rate. Nothing to interact with; they just anchor the year.</li>
+          <li><strong>Real pay trend (line):</strong> x-axis is year (2013–2025), y-axis is real median starting pay in 2024 S$. Read it left to right as one continuous trend; hover a point for that year's exact figure.</li>
+          <li><strong>Employment mix (stacked area + line):</strong> x-axis is year again, y-axis is share of graduates (0–100%). The green band is full-time permanent jobs, the purple band is other employment — stack height at any year is the total employed. The pink line on top is the overall employment rate, so the gap above the stacked area is graduates not employed at all.</li>
+        </ol>
+      </div>
+
       <dl class="notes">
         <div>
           <dt>What this shows</dt>
@@ -335,6 +344,14 @@
           <p class="viz-mobile-note">Best viewed on a laptop; on mobile, rotate or open in Tableau Public.</p>
         </figure>
 
+        <div class="read-guide">
+          <p class="read-guide-title">How to read each chart</p>
+          <ol>
+            <li><strong>Field ranking (bump chart, top):</strong> x-axis is year, y-axis is rank (1 at the top = highest median pay that year, not pay itself). Follow one coloured line to see a field climb or fall in rank over time; lines crossing means fields swapped places.</li>
+            <li><strong>Programme strip plot (bottom):</strong> one row per field; each dot is a 2025 programme placed left-to-right by its own median pay, coloured by university. The dashed vertical line is the field's median — dots to its right beat the field, dots to its left trail it.</li>
+          </ol>
+        </div>
+
         <dl class="notes">
           <div>
             <dt>What this shows</dt>
@@ -416,6 +433,14 @@
           <figcaption>Head-to-head: median pay by field and university, and how far each programme in the chosen field sits above or below the field median. <span class="src">Source: MOE/MOM Graduate Employment Survey; real 2024 S$.</span></figcaption>
           <p class="viz-mobile-note">Best viewed on a laptop; on mobile, rotate or open in Tableau Public.</p>
         </figure>
+
+        <div class="read-guide">
+          <p class="read-guide-title">How to read each chart</p>
+          <ol>
+            <li><strong>Field by university (left, dot plot):</strong> each row is a field, each dot a university's median pay in that field — so you read across a row to compare universities on the same field, or down a column (same colour) to see one university across fields.</li>
+            <li><strong>Premium vs field median (right, diverging bars):</strong> one bar per programme in the field/year you've picked, sorted by value. Bars reach right and are blue when the programme pays above the field median, and left and orange when it pays below — the longer the bar, the bigger the gap from the dashed-line median.</li>
+          </ol>
+        </div>
 
         <dl class="notes">
           <div>
@@ -512,6 +537,14 @@
         <p class="viz-mobile-note">Best viewed on a laptop; on mobile, rotate or open in Tableau Public.</p>
       </figure>
 
+      <div class="read-guide">
+        <p class="read-guide-title">How to read each chart</p>
+        <ol>
+          <li><strong>Pay vs employment (left, quadrant):</strong> x-axis is median pay, y-axis is full-time permanent rate. Reference lines mark the year's median on each axis, splitting the chart into four quadrants (high/low pay × high/low security). Bubble size is number of graduates, colour is university.</li>
+          <li><strong>Spread vs pay (right, scatter):</strong> x-axis is median pay, y-axis is pay spread (the IQR as a share of the median — bigger means less predictable pay within that programme). Points trending upper-right mean higher pay comes with less certainty about what you'll actually earn.</li>
+        </ol>
+      </div>
+
       <dl class="notes">
         <div>
           <dt>What this shows</dt>
@@ -586,6 +619,14 @@
         <figcaption>Total tuition for the whole degree by student group, and the price each group pays for every programme in the chosen field. <span class="src">Source: AY2026/27 fee schedules of the six universities; real 2024 S$.</span></figcaption>
         <p class="viz-mobile-note">Best viewed on a laptop; on mobile, rotate or open in Tableau Public.</p>
       </figure>
+
+      <div class="read-guide">
+        <p class="read-guide-title">How to read each chart</p>
+        <ol>
+          <li><strong>Tuition by group (left, bars):</strong> one bar per student group, sorted by total tuition for the whole degree — compare bar length to see the gap between, say, a citizen and a non-subsidised student.</li>
+          <li><strong>Fee ladder (right, dots):</strong> each row is a programme in the chosen field; the five dots on a row are the five student groups, positioned by the fee they pay for that programme. Dots spread far apart on a row mean that programme's price varies a lot by who's paying.</li>
+        </ol>
+      </div>
 
       <dl class="notes">
         <div>
@@ -671,6 +712,14 @@
         <p class="viz-mobile-note">Best viewed on a laptop; on mobile, rotate or open in Tableau Public.</p>
       </figure>
       <p class="definition">Payback = total tuition ÷ median gross monthly pay of 2025 graduates. Ignores tax, living costs, financial aid and salary growth.</p>
+
+      <div class="read-guide">
+        <p class="read-guide-title">How to read each chart</p>
+        <ol>
+          <li><strong>Payback by programme (left, bars):</strong> one bar per programme in the field and student group you've picked, sorted by months to pay back tuition. Shorter bars are better value for that student group.</li>
+          <li><strong>Value map (right, scatter):</strong> x-axis is median pay, y-axis is payback in months. Lower and further right is better value — fast payback at high pay; upper-left points pay less and take longer to recover tuition.</li>
+        </ol>
+      </div>
 
       <dl class="notes">
         <div>
@@ -764,6 +813,15 @@
         <figcaption>Which programmes beat their field median most often, how their real pay moved across the chosen window, and whether growing intakes lowered pay. <span class="src">Source: MOE/MOM Graduate Employment Survey; MOM graduates by institution and course, 2015–2025.</span></figcaption>
         <p class="viz-mobile-note">Best viewed on a laptop; on mobile, rotate or open in Tableau Public.</p>
       </figure>
+
+      <div class="read-guide">
+        <p class="read-guide-title">How to read each chart</p>
+        <ol>
+          <li><strong>Beats field median (left, bars):</strong> one bar per programme in the chosen field, length is how many years (out of the From–To window) it paid above its field median. Longer bars are more consistent year-on-year leaders, not just one good year.</li>
+          <li><strong>Slope chart (top right):</strong> two columns, the From year and the To year; each line is a university or programme, sloping up or down to show whether its real pay rose or fell across the window. A line crossing another means the two swapped order.</li>
+          <li><strong>Supply vs pay (bottom right, scatter):</strong> x-axis is the change in number of graduates, y-axis is the change in real pay, over the same window. Points scattered with no clear slope (as here) mean a growing intake has not visibly pushed pay down.</li>
+        </ol>
+      </div>
 
       <dl class="notes">
         <div>
@@ -1016,6 +1074,13 @@
         <figcaption>Reliability of every programme-year in the selected field. <span class="src">Source: GES footnote flags; respondent estimates from MOM graduate counts.</span></figcaption>
         <p class="viz-mobile-note">Best viewed on a laptop; on mobile, rotate or open in Tableau Public.</p>
       </figure>
+
+      <div class="read-guide">
+        <p class="read-guide-title">How to read this chart</p>
+        <ol>
+          <li><strong>Reliability grid:</strong> each row is a programme in the chosen field, each column a survey year. A cell's colour is that programme-year's reliability status from the legend above — scan a row to see how one programme's data quality has changed over time, or a column to see how reliable a whole cohort year is.</li>
+        </ol>
+      </div>
 
       <div class="coverage">
         <table>
