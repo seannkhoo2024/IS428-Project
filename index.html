@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css?v=3" />
 
   <!-- Tableau Embedding API v3: powers the <tableau-viz> elements below.
        Remove this line if you switch to the older iframe embed code from Tableau Public's Share button. -->
@@ -118,27 +118,79 @@
       </ul>
     </section>
 
-    <!-- ================= WHY THIS MATTERS ================= -->
-    <section id="why" class="block why" aria-labelledby="why-title">
-      <div class="block-head">
-        <h2 id="why-title">Why this matters</h2>
-        <p class="block-lead">Choosing a degree is one of the biggest financial decisions a family makes, and the data to compare options is scattered.</p>
+    <!-- ================= OVERVIEW: PROBLEM, STAKEHOLDERS, STAKES ================= -->
+    <section id="overview" class="overview-wrap" aria-labelledby="overview-title">
+      <div class="overview-panel">
+
+        <div class="overview-part">
+          <p class="kicker">01 · The problem</p>
+          <h2 id="overview-title">We don't know if a degree is even worth it</h2>
+          <p class="lead">Singapore's Graduate Employment Survey is published every year as long per-university tables in nominal dollars. There is no single place to compare the same discipline across universities, see the fee gap between universities and student groups, see more than one cohort at a time, or know how much of any pay gain is just inflation — the fee gap alone changes the payback period for the same degree from 7.4 to 32.5 months, depending only on which fee group you're in. And before any of that, there's a more basic question nobody can easily answer.</p>
+          <blockquote class="overview-question">
+            <p>Which degree, at which university, actually pays off — and is it worth more than starting work right away, once you account for fees, years of foregone income, inflation, and who is paying?</p>
+          </blockquote>
+        </div>
+
+        <div class="overview-part">
+          <p class="kicker">02 · Who needs this answer</p>
+          <h3 class="overview-part-title">Four groups, four different stakes</h3>
+          <ul class="stakeholders">
+            <li class="stakeholder stakeholder-a">
+              <span class="stakeholder-mark" aria-hidden="true">LS</span>
+              <h4>Prospective local students</h4>
+              <p>Weighing citizen-rate tuition and years out of the workforce against simply starting work, and against the same degree at another university.</p>
+            </li>
+            <li class="stakeholder stakeholder-b">
+              <span class="stakeholder-mark" aria-hidden="true">IS</span>
+              <h4>International students</h4>
+              <p>Facing a much wider fee gap across universities, where foregone income and payback period matter even more.</p>
+            </li>
+            <li class="stakeholder stakeholder-c">
+              <span class="stakeholder-mark" aria-hidden="true">PA</span>
+              <h4>Parents</h4>
+              <p>Weighing the fee gap between universities and years of tuition against starting pay, job security, and the income given up while studying.</p>
+            </li>
+            <li class="stakeholder stakeholder-d">
+              <span class="stakeholder-mark" aria-hidden="true">PM</span>
+              <h4>Policymakers</h4>
+              <p>Checking whether a degree still pays off over working straight away, and where fee and outcome gaps between universities are widest.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="overview-part">
+          <p class="kicker">03 · Why this matters</p>
+          <h3 class="overview-part-title">The data to answer this is scattered</h3>
+          <ul class="why-list">
+            <li>
+              <h4>The stakes are personal and large</h4>
+              <p>Choosing a degree is one of the biggest financial decisions a family makes — years of tuition and foregone income, not just curiosity.</p>
+            </li>
+            <li>
+              <h4>University averages hide programmes</h4>
+              <p>A university's median depends on its mix of programmes. The same discipline can pay very differently from one campus to the next.</p>
+            </li>
+            <li>
+              <h4>One year is not a trend</h4>
+              <p>Outcomes move with each cohort and with inflation. A strong year can look like a lasting advantage when it isn't.</p>
+            </li>
+            <li>
+              <h4>Fees aren't one number</h4>
+              <p>Citizen, PR, ASEAN, other international and non-subsidised rates can differ by 4–5x for the same programme, so "is it worth it" has a different answer for each stakeholder.</p>
+            </li>
+            <li>
+              <h4>Pay and security are different questions</h4>
+              <p>A high median salary says nothing about how many graduates actually land a full-time permanent job. Published tables rarely let you see both at once.</p>
+            </li>
+            <li>
+              <h4>Nominal numbers overstate progress</h4>
+              <p>Pay figures are usually reported in the dollars of the day they were earned. Without adjusting for inflation, a decade of raises can look bigger than it really is.</p>
+            </li>
+          </ul>
+          <p class="why-beyond">We go further than existing GES tools: thirteen cohorts (2013–2025) in real 2024 dollars, the P25–P75 range and not only the median, reliability flags on every number, and tuition fees for five student groups.</p>
+        </div>
+
       </div>
-      <ul class="why-list">
-        <li>
-          <h3>No tool compares like with like</h3>
-          <p>The Graduate Employment Survey is published as long yearly tables. There is no easy way to put similar courses at different universities side by side.</p>
-        </li>
-        <li>
-          <h3>University averages hide programmes</h3>
-          <p>A university's median depends on its mix of programmes. The same discipline can pay very differently from one campus to the next.</p>
-        </li>
-        <li>
-          <h3>One year is not a trend</h3>
-          <p>Outcomes move with each cohort and with inflation. A strong year can look like a lasting advantage when it isn't.</p>
-        </li>
-      </ul>
-      <p class="why-beyond">We go further than existing GES tools: thirteen cohorts (2013–2025) in real 2024 dollars, the P25–P75 range and not only the median, reliability flags on every number, and tuition fees for five student groups.</p>
     </section>
 
     <!-- ================= CHAPTER 1: THE PUZZLE ================= -->
@@ -202,6 +254,15 @@
           <dd>The "average graduate" story hides a job-security squeeze, and it is broad-based: every university's median permanent rate fell from 2022 to 2025 (NUS 91.4% to 79.1%, NTU 87.1% to 71.4%, SUSS 83.3% to 69.7%). The rest of the site looks at who is affected.</dd>
         </div>
       </dl>
+      <div class="gains" aria-label="How each stakeholder can use this dashboard">
+        <p class="gains-label">How each stakeholder can use this</p>
+        <ul>
+          <li><span class="gains-mark" style="--c:var(--nus)">LS</span><div><strong>Local students</strong><p>Check that pay is still rising before committing years and fees to a degree.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--ntu)">IS</span><div><strong>International students</strong><p>Weigh the falling permanent-job rate against the cost of studying here as a non-citizen.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--smu)">PA</span><div><strong>Parents</strong><p>See that "pays more now" and "finds a stable job" are not the same story.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--sit)">PM</span><div><strong>Policymakers</strong><p>Spot the across-the-board permanent-rate decline as a labour-market signal, not a degree-choice problem.</p></div></li>
+        </ul>
+      </div>
       <p class="how-to"><strong>How to use:</strong> hover over any year for the exact figures. This page has no filters.</p>
     </section>
 
@@ -288,6 +349,15 @@
             <dd>The spread inside a field is wider than the gap between most field medians (S$3,741–4,996). Choosing a field is necessary but not sufficient; the specific programme matters, as Altonji, Blom &amp; Meghir (2012) found for college majors.</dd>
           </div>
         </dl>
+        <div class="gains" aria-label="How each stakeholder can use this dashboard">
+          <p class="gains-label">How each stakeholder can use this</p>
+          <ul>
+            <li><span class="gains-mark" style="--c:var(--nus)">LS</span><div><strong>Local students</strong><p>Find your intended field's rank and trend before locking in a choice.</p></div></li>
+            <li><span class="gains-mark" style="--c:var(--ntu)">IS</span><div><strong>International students</strong><p>Match your strengths to fields that score consistently well here, not just this year.</p></div></li>
+            <li><span class="gains-mark" style="--c:var(--smu)">PA</span><div><strong>Parents</strong><p>See whether the field your child wants is climbing or sliding, like Health Sciences.</p></div></li>
+            <li><span class="gains-mark" style="--c:var(--sit)">PM</span><div><strong>Policymakers</strong><p>Spot fields losing ground to target curriculum or manpower support.</p></div></li>
+          </ul>
+        </div>
         <p class="how-to"><strong>How to use:</strong> click a field in the ranking to carry it into the later chapters and highlight it in the strip plot. Hover a dot for programme details.</p>
       </section>
 
@@ -361,6 +431,15 @@
             <dd>University medians (SUTD S$4,868, NUS S$4,568, SMU S$4,480, NTU S$4,430, SIT S$4,184, SUSS S$3,938) hide programme mix: SIT's game-design CS pays like an arts degree, while its simulation CS (S$4,922) matches SUTD. Compare within a field or discipline.</dd>
           </div>
         </dl>
+        <div class="gains" aria-label="How each stakeholder can use this dashboard">
+          <p class="gains-label">How each stakeholder can use this</p>
+          <ul>
+            <li><span class="gains-mark" style="--c:var(--nus)">LS</span><div><strong>Local students</strong><p>Compare the same course across universities before applying, not after.</p></div></li>
+            <li><span class="gains-mark" style="--c:var(--ntu)">IS</span><div><strong>International students</strong><p>Check whether a pricier university's pay premium is actually large enough to justify its fees.</p></div></li>
+            <li><span class="gains-mark" style="--c:var(--smu)">PA</span><div><strong>Parents</strong><p>See if a cheaper or closer university offers the same programme at similar pay.</p></div></li>
+            <li><span class="gains-mark" style="--c:var(--sit)">PM</span><div><strong>Policymakers</strong><p>Spot where university averages hide a wide gap between specific programmes.</p></div></li>
+          </ul>
+        </div>
         <p class="how-to"><strong>How to use:</strong> pick a field and year, or click a field in the left chart. Switch on "Include small samples (&lt;30 respondents)" to see programmes left out of the headline view.</p>
       </section>
     </div>
@@ -447,6 +526,15 @@
           <dd>Better-paid programmes tend to have a wider relative spread (r = 0.48); NUS Business Administration's IQR is 83% of its median, so a high median is no guarantee. The lowest permanent rates: NTU Art, Design &amp; Media 34.8%, NUS Landscape Architecture 40.0%.</dd>
         </div>
       </dl>
+      <div class="gains" aria-label="How each stakeholder can use this dashboard">
+        <p class="gains-label">How each stakeholder can use this</p>
+        <ul>
+          <li><span class="gains-mark" style="--c:var(--nus)">LS</span><div><strong>Local students</strong><p>Decide whether you value pay, security or predictability most, since few programmes offer all three.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--ntu)">IS</span><div><strong>International students</strong><p>Favour programmes that score well on both pay and permanent-job rate, not just one.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--smu)">PA</span><div><strong>Parents</strong><p>Flag "high pay, low security" programmes as riskier bets than they first look.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--sit)">PM</span><div><strong>Policymakers</strong><p>Identify programmes low on both pay and employment for targeted support.</p></div></li>
+        </ul>
+      </div>
       <p class="how-to"><strong>How to use:</strong> choose a Year, then click a programme to highlight it in both charts.</p>
     </section>
 
@@ -598,6 +686,15 @@
           <dd>Payback turns fees and pay into one number a student can compare for their own situation.</dd>
         </div>
       </dl>
+      <div class="gains" aria-label="How each stakeholder can use this dashboard">
+        <p class="gains-label">How each stakeholder can use this</p>
+        <ul>
+          <li><span class="gains-mark" style="--c:var(--nus)">LS</span><div><strong>Local students</strong><p>Check payback at the citizen rate, not just the headline salary.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--ntu)">IS</span><div><strong>International students</strong><p>See exactly how much longer the same degree takes to pay back at your own fee tier.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--smu)">PA</span><div><strong>Parents</strong><p>Weigh the tuition bill against years of foregone income for your child's fee group.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--sit)">PM</span><div><strong>Policymakers</strong><p>See which student groups face the longest paybacks and whether subsidies match that gap.</p></div></li>
+        </ul>
+      </div>
       <p class="how-to"><strong>How to use:</strong> pick your student group and a field.</p>
     </section>
 
@@ -682,6 +779,15 @@
           <dd>One strong cohort is not a lasting advantage; beating the field year after year is. And a growing intake has not, so far, meant lower starting pay. (Single-programme fields such as Dentistry always equal their own median, so "beats field" does not apply there.)</dd>
         </div>
       </dl>
+      <div class="gains" aria-label="How each stakeholder can use this dashboard">
+        <p class="gains-label">How each stakeholder can use this</p>
+        <ul>
+          <li><span class="gains-mark" style="--c:var(--nus)">LS</span><div><strong>Local students</strong><p>Look for consistent year-on-year leaders, not a programme that only had one good year.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--ntu)">IS</span><div><strong>International students</strong><p>Favour programmes that beat their field most years, a more durable, less year-dependent premium.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--smu)">PA</span><div><strong>Parents</strong><p>See that a growing intake hasn't visibly pushed pay down, easing capacity-growth worries.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--sit)">PM</span><div><strong>Policymakers</strong><p>Check the evidence before capping any programme's intake over pay-dilution fears.</p></div></li>
+        </ul>
+      </div>
       <p class="how-to"><strong>How to use:</strong> choose a field and a <strong>From year / To year</strong> window. All three charts update. The left chart counts how many of the reported years in that window each programme beat its field median (e.g. "4 of 5 years" for 2015–2019). A programme must be reported in at least half the years in the window to appear.</p>
     </section>
 
@@ -776,6 +882,15 @@
           <figcaption><span class="lg lg-sel"></span>Selected field <span class="lg lg-other"></span>Other fields. Illustration, not data.</figcaption>
         </figure>
       </div>
+      <div class="gains" aria-label="How each stakeholder can use this dashboard">
+        <p class="gains-label">How each stakeholder can use this</p>
+        <ul>
+          <li><span class="gains-mark" style="--c:var(--nus)">LS</span><div><strong>Local students</strong><p>Pull your exact programme and see pay, security and payback together in one view.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--ntu)">IS</span><div><strong>International students</strong><p>Switch to your own fee group to see your real payback, not the citizen default.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--smu)">PA</span><div><strong>Parents</strong><p>Compare your child's programme head-to-head against its closest peers before deciding.</p></div></li>
+          <li><span class="gains-mark" style="--c:var(--sit)">PM</span><div><strong>Policymakers</strong><p>Check the reliability flag before citing any single programme's numbers publicly.</p></div></li>
+        </ul>
+      </div>
       <p class="how-to"><strong>How to use:</strong> click any programme in the pay-trend or head-to-head chart to switch the whole card to it.</p>
     </section>
 
@@ -786,12 +901,30 @@
         <p class="block-lead">Six things we'd want a student and their parents to know, in the order the story tells them.</p>
       </div>
       <ol class="takeaways">
-        <li><p>Real starting pay is up about a quarter since 2013, but full-time permanent employment is at its lowest since 2020 (73.4%).</p></li>
-        <li><p>Field matters (IDT leads every year; Health Sciences slid from 2nd to 8th), but the spread within a field is larger than the gaps between most fields.</p></li>
-        <li><p>The same discipline can differ by 25–40% across universities (Computer Science: 40%).</p></li>
-        <li><p>Pay and job security are only weakly related (r = 0.29), and higher pay comes with a wider spread.</p></li>
-        <li><p>Fees by student group change payback roughly fourfold (7.4 to 32.5 months), more than field choice does for citizens.</p></li>
-        <li><p>The gap between programmes widened from S$233 to S$664 (interquartile range, 2013 → 2025), a small set of programmes beat their field every year, and graduate supply has not visibly depressed pay.</p></li>
+        <li>
+          <p class="take-head">Real starting pay is up about a quarter since 2013, but full-time permanent employment is at its lowest since 2020 (73.4%).</p>
+          <p class="take-detail">The slide is broad-based, not a weak-sector problem: every university's median permanent rate fell between 2022 and 2025.</p>
+        </li>
+        <li>
+          <p class="take-head">Field matters (IDT leads every year; Health Sciences slid from 2nd to 8th), but the spread within a field is larger than the gaps between most fields.</p>
+          <p class="take-detail">Field medians run S$3,741–4,996, a narrower range than the spread of programmes inside most single fields.</p>
+        </li>
+        <li>
+          <p class="take-head">The same discipline can differ by 25–40% across universities (Computer Science: 40%).</p>
+          <p class="take-detail">University-level medians hide this: a university's game-design Computer Science can pay like an arts degree while its other Computer Science programme matches the top schools.</p>
+        </li>
+        <li>
+          <p class="take-head">Pay and job security are only weakly related (r = 0.29), and higher pay comes with a wider spread.</p>
+          <p class="take-detail">2025's 118 programmes split almost evenly across high/low pay and high/low employment, so no single profile dominates.</p>
+        </li>
+        <li>
+          <p class="take-head">Fees by student group change payback roughly fourfold (7.4 to 32.5 months), more than field choice does for citizens.</p>
+          <p class="take-detail">Two programmes with identical pay can have very different paybacks once fees are added: SMU Computer Science and NUS Information Systems both pay S$5,907, but citizen payback is 7.6 vs 5.4 months.</p>
+        </li>
+        <li>
+          <p class="take-head">The gap between programmes widened from S$233 to S$664 (interquartile range, 2013 → 2025), a small set of programmes beat their field every year, and graduate supply has not visibly depressed pay.</p>
+          <p class="take-detail">NUS Computer Science, NUS Business Administration (Hons) and NTU Accountancy &amp; Business beat their field median in all 13 years on record.</p>
+        </li>
       </ol>
     </section>
 
@@ -799,32 +932,36 @@
     <section id="recommendations" class="block" aria-labelledby="rec-title">
       <div class="block-head">
         <h2 id="rec-title">Recommendations</h2>
+        <p class="block-lead">What we'd tell each group, and the finding behind each piece of advice.</p>
       </div>
       <div class="recs">
         <article>
+          <span class="rec-mark">ST</span>
           <h3>Prospective students and parents</h3>
           <ul>
-            <li>Compare within a discipline, not by university average.</li>
-            <li>Check full-time permanent rates and the P25–P75 range, not only the median.</li>
-            <li>Use payback for your own student group.</li>
-            <li>Treat programmes flagged small-sample or not reported with caution.</li>
+            <li><strong>Compare within a discipline, not by university average.</strong> Computer Science alone spans S$4,489–6,301 across universities, a 40% range a school's overall median would hide.</li>
+            <li><strong>Check full-time permanent rates and the P25–P75 range, not only the median.</strong> A high median pay says nothing about how many graduates actually land a permanent job, or how wide the outcomes are around it.</li>
+            <li><strong>Use payback for your own student group.</strong> Citizen, PR, ASEAN, other international and non-subsidised rates can turn a 7-month payback into one over four times longer.</li>
+            <li><strong>Treat programmes flagged small-sample or not reported with caution.</strong> About 15% of all programme-year rows in this dataset rest on fewer than 30 respondents or have no reported figure at all.</li>
           </ul>
         </article>
         <article>
+          <span class="rec-mark">GES</span>
           <h3>Universities and MOE</h3>
           <ul>
-            <li>Publish GES with response counts for every row, as Table T15 began doing in 2025.</li>
-            <li>Keep a consistent programme identifier across years.</li>
-            <li>Publish P10 and P90 if possible.</li>
-            <li>Report fees alongside outcomes.</li>
+            <li><strong>Publish GES with response counts for every row,</strong> as Table T15 began doing in 2025. Without it, a 100% permanent rate from 3 respondents looks identical to one from 300.</li>
+            <li><strong>Keep a consistent programme identifier across years.</strong> Renamed or merged programmes break any attempt to track a single programme's trend over time.</li>
+            <li><strong>Publish P10 and P90 if possible.</strong> The P25–P75 range already used here shows wide spreads; the tails would show just how wide outcomes really get.</li>
+            <li><strong>Report fees alongside outcomes.</strong> Pay tables and fee schedules currently live on separate pages, making the payback question harder to answer than it needs to be.</li>
           </ul>
         </article>
         <article>
+          <span class="rec-mark">V2</span>
           <h3>Future versions of this tool</h3>
           <ul>
-            <li>Add polytechnic GES for diploma-versus-degree context.</li>
-            <li>Add longer-run outcomes when they become available.</li>
-            <li>Offer national wage benchmarks as optional reference lines.</li>
+            <li><strong>Add polytechnic GES for diploma-versus-degree context.</strong> Right now this tool can't answer whether a degree beats a diploma in the same field.</li>
+            <li><strong>Add longer-run outcomes when they become available.</strong> A six-month employment snapshot says little about a 10- or 20-year career.</li>
+            <li><strong>Offer national wage benchmarks as optional reference lines.</strong> So a programme's pay can be read against the wider labour market, not only against other programmes.</li>
           </ul>
         </article>
       </div>
@@ -900,65 +1037,94 @@
 
       <div class="accordions">
         <details>
-          <summary>Data sources</summary>
+          <summary><span>Data sources</span><span class="acc-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
           <div class="acc-body">
+            <p class="acc-tldr">Six public datasets, 2013–2025, merged into one table of <strong>1,615 programme-years</strong> across 183 programmes.</p>
+            <h4>Surveys (outcomes)</h4>
             <ul>
-              <li><strong>Graduate Employment Survey 2013–2024</strong> for NTU, NUS, SIT, SMU, SUSS and SUTD (MOE via data.gov.sg): 1,550 rows of employment rates and salary percentiles per degree.</li>
-              <li><strong>GES 2025, Table T15</strong> (MOM): 148 degree rows from six university sheets, adding response rate and "secured employment".</li>
-              <li><strong>Graduates from Institutions of Higher Learning by Institution and Course</strong>, 2015–2025 (MOM): graduate counts per course.</li>
-              <li><strong>Consumer Price Index, 2024 = 100</strong>, monthly (SingStat): for deflating salaries and fees.</li>
-              <li><strong>AY2026/27 tuition fee schedules</strong> from each university's fee pages: 140 of 150 current programmes mapped.</li>
-              <li><strong>Labour Force Survey income tables</strong> (MOM/SingStat): prepared as national wage benchmarks, used as context only.</li>
+              <li><strong>Graduate Employment Survey, 2013–2024</strong> — NTU, NUS, SIT, SMU, SUSS, SUTD (MOE, via data.gov.sg). 1,550 rows: employment rate and salary percentiles per degree.</li>
+              <li><strong>GES 2025, Table T15</strong> (MOM). 148 degree rows, with response rate and "secured employment" added.</li>
             </ul>
-            <p>The cleaned main table has 1,615 rows (programme × year), 2013–2025, covering 183 programmes, 96 disciplines and 14 fields.</p>
+            <h4>Counts and costs</h4>
+            <ul>
+              <li><strong>Graduates from Institutions of Higher Learning, 2015–2025</strong> (MOM) — graduate counts per course.</li>
+              <li><strong>AY2026/27 tuition fee schedules</strong> — each university's own fee pages. 140 of 150 current programmes mapped.</li>
+            </ul>
+            <h4>Benchmarks</h4>
+            <ul>
+              <li><strong>Consumer Price Index, 2024 = 100</strong>, monthly (SingStat) — used to deflate salaries and fees to real dollars.</li>
+              <li><strong>Labour Force Survey income tables</strong> (MOM/SingStat) — national wage context only, never used for ranking.</li>
+            </ul>
           </div>
         </details>
         <details>
-          <summary>Cleaning and the course crosswalk</summary>
+          <summary><span>Cleaning and the course crosswalk</span><span class="acc-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
           <div class="acc-body">
-            <p>A Python pipeline rebuilds every table from the seven source files in one command, with logs and QA files as an audit trail. It repairs garbled school names, separates footnote symbols from degree titles and turns them into flags (small sample, not reported, follow-up survey, merged programme), and converts 928 "na" cells to blanks.</p>
-            <p>A crosswalk maps 458 raw degree titles to 183 canonical programmes, 96 disciplines and 14 fields (the MOE GES 2025 course clusters), with one explicit rule per title. Pure renamings are merged into one series. Anything that ran in the same year as its look-alike stays separate, for example NUS Honours and non-Honours, or SIT Chemical Engineering with Newcastle and with TU Munich.</p>
-            <p>Checks: exactly one row per programme per year, one field and discipline per programme, and all 1,480 cells of the 2025 rows verified against Table T15 with no mismatches.</p>
+            <p class="acc-tldr">A scripted pipeline turns 458 raw degree titles from six universities into 183 programmes you can compare year over year — every merge is a documented, repeatable rule.</p>
+            <h4>What the pipeline fixes</h4>
+            <p>One command rebuilds every table from the seven source files, with logs and QA files left behind as an audit trail. It repairs garbled school names, splits footnote symbols off degree titles into flags (small sample, not reported, follow-up survey, merged programme), and turns 928 "na" cells into blanks.</p>
+            <h4>How the crosswalk works</h4>
+            <p>Each of the 458 raw titles maps to one canonical programme, discipline and field (the MOE GES 2025 clusters) under an explicit, documented rule. Pure renamings become one continuous series. Programmes that ran side by side under similar names stay separate — e.g. NUS Honours vs. non-Honours, or SIT Chemical Engineering with Newcastle vs. with TU Munich.</p>
+            <h4>What we checked</h4>
+            <p>Exactly one row per programme per year, exactly one field and discipline per programme, and all 1,480 cells of the 2025 rows matched against Table T15 with zero mismatches.</p>
           </div>
         </details>
         <details>
-          <summary>Real dollars: how we adjust for inflation</summary>
+          <summary><span>Real dollars: how we adjust for inflation</span><span class="acc-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
           <div class="acc-body">
-            <p>Every salary is converted to 2024 prices: <em>real = nominal × CPI(2024 average) ÷ CPI(survey month)</em>, using CPI All Items for the month each university ran its survey (November for NUS, NTU, SMU and SUSS; March of the following year for SIT; February of the following year for SUTD until it moved to November in 2024; November 2025 for all six in 2025).</p>
-            <p>Using the survey month rather than the annual average changes values by a median of 0.39% and up to 4.29%. Tuition is deflated with August 2026 CPI, the start of AY2026/27.</p>
+            <p class="acc-tldr">Every salary and fee is restated in 2024 dollars, so figures from different survey years are comparable.</p>
+            <p><em>real = nominal × CPI(2024 average) ÷ CPI(survey month)</em>, using CPI All Items for the month each university actually surveyed — not a flat annual average.</p>
+            <ul>
+              <li>November, for NUS, NTU, SMU and SUSS</li>
+              <li>March of the following year, for SIT</li>
+              <li>February of the following year for SUTD, until it moved to November from 2024</li>
+              <li>November 2025, for all six, in the 2025 round</li>
+            </ul>
+            <p>Using the survey month instead of the annual average changes values by a median of 0.39% and up to 4.29%. Tuition is deflated separately, with August 2026 CPI — the start of AY2026/27.</p>
           </div>
         </details>
         <details>
-          <summary>Assumptions</summary>
+          <summary><span>Assumptions</span><span class="acc-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
           <div class="acc-body">
+            <p class="acc-tldr">Read every chart as: early-career outcomes, in real dollars, compared within similar fields — not a lifetime or causal ranking.</p>
             <ol>
-              <li><strong>Employment prospects</strong> are GES outcomes about six months after graduation. The main measures are the full-time permanent employment rate and gross monthly salary.</li>
-              <li><strong>All money is in real 2024 dollars.</strong></li>
-              <li><strong>Outcomes are distributions:</strong> each programme-year is shown with its median, P25 and P75.</li>
-              <li><strong>Comparisons across universities</strong> are made within a field or discipline.</li>
-              <li><strong>Small samples and follow-up surveys are handled separately.</strong> Rows with fewer than 30 respondents are left out of headline views. Law, Medicine, Pharmacy, Architecture and BMS &amp; Chinese Medicine are surveyed later and excluded from fresh-graduate charts.</li>
-              <li><strong>National occupational wages</strong> are a field-level reference only and are never used for ranking.</li>
-              <li><strong>Student groups</strong> follow the universities' fee categories: Singapore Citizen, Permanent Resident, International (ASEAN), International (Other) and Non-subsidised (no Tuition Grant).</li>
+              <li><strong>Employment prospects</strong> are GES outcomes about six months after graduation — mainly the full-time permanent employment rate and gross monthly salary.</li>
+              <li><strong>All money is in real 2024 dollars</strong>, so amounts from different years can be compared directly.</li>
+              <li><strong>Outcomes are distributions, not single numbers:</strong> each programme-year is shown with its median, P25 and P75.</li>
+              <li><strong>Comparisons across universities</strong> are made within a field or discipline, not across unrelated ones.</li>
+              <li><strong>Small samples and late surveys are set aside, not hidden:</strong> rows under 30 respondents are left out of headline views; Law, Medicine, Pharmacy, Architecture and BMS &amp; Chinese Medicine are surveyed later and excluded from fresh-graduate charts.</li>
+              <li><strong>National occupational wages</strong> are field-level context only, never used to rank programmes.</li>
+              <li><strong>Student groups</strong> follow each university's own fee categories: Singapore Citizen, Permanent Resident, International (ASEAN), International (Other), and Non-subsidised (no Tuition Grant).</li>
             </ol>
           </div>
         </details>
         <details>
-          <summary>Payback definition</summary>
+          <summary><span>Payback definition</span><span class="acc-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
           <div class="acc-body">
-            <p><strong>Payback months = total tuition (real) ÷ median gross monthly starting pay (real).</strong> It is a simple affordability ratio: how many months of a median starting salary equal the whole tuition bill.</p>
-            <p>Payback uses 2025 salaries only, because the fees are AY2026/27 fees. It ignores taxes, CPF, living costs, bursaries and other aid, loans and salary growth. Fees are each university's annual fee × programme length (SUSS: programme total; SIT: fee per credit × total credits).</p>
+            <p class="acc-tldr"><strong>Payback months = total tuition (real) ÷ median gross monthly starting pay (real).</strong> How many months of a median starting salary it takes to cover the whole tuition bill.</p>
+            <p>Fees are each university's annual fee × programme length (SUSS: programme total; SIT: fee per credit × total credits). Payback uses 2025 salaries only, because the fees are AY2026/27 fees — it does not model salary growth between now and then.</p>
+            <p>It also ignores taxes, CPF, living costs, bursaries and other financial aid, and loans. Treat it as a rough affordability ratio, not a return-on-investment calculation.</p>
           </div>
         </details>
         <details>
-          <summary>Limitations</summary>
+          <summary><span>Limitations</span><span class="acc-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
           <div class="acc-body">
+            <p class="acc-tldr">Treat this as a descriptive snapshot of early-career outcomes — not a causal ranking, and not a full cost-benefit analysis.</p>
+            <h4>What GES does and doesn't capture</h4>
             <ul>
-              <li>GES measures outcomes about six months after graduation: labour-market entry, not careers. Response rates are below 100% and non-respondents are not profiled.</li>
-              <li>Distributions are coarse: GES publishes only P25, median and P75.</li>
-              <li>Comparisons are descriptive, not causal. Programmes differ in who they admit (Altonji, Blom &amp; Meghir, 2012).</li>
-              <li>MOM counts are graduates, not respondents; 2025 respondent counts are estimates; NUS and SUSS counts are mostly unlinkable.</li>
-              <li>Payback ignores taxes, CPF, living costs, financial aid, loans and salary growth, and applies AY2026/27 fees to 2025 salaries.</li>
-              <li>A few crosswalk judgement calls (all documented) can change individual series.</li>
+              <li>It measures outcomes about six months after graduation — labour-market entry, not careers.</li>
+              <li>Response rates are below 100%, and non-respondents are not profiled.</li>
+              <li>GES publishes only three points per distribution: P25, median and P75.</li>
+            </ul>
+            <h4>Comparisons and counts</h4>
+            <ul>
+              <li>Comparisons are descriptive, not causal — programmes differ in who they admit (Altonji, Blom &amp; Meghir, 2012).</li>
+              <li>MOM's graduate counts are graduates, not survey respondents; 2025 respondent counts are estimates; NUS and SUSS counts are mostly unlinkable to the survey rows.</li>
+              <li>A handful of documented crosswalk judgement calls can shift individual series.</li>
+            </ul>
+            <h4>Payback and scope</h4>
+            <ul>
+              <li>Payback ignores taxes, CPF, living costs, financial aid, loans and salary growth, and pairs AY2026/27 fees with 2025 salaries.</li>
               <li>Wage benchmarks are context only. Polytechnic GES is not included yet.</li>
             </ul>
           </div>
