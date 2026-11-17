@@ -235,19 +235,88 @@ main {
 }
 .block-lead { margin-top: 12px; font-size: 19px; color: var(--text); }
 h3 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 18px; line-height: 1.35; }
+h4 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 16px; line-height: 1.35; }
+
+/* ---------- Overview (problem / stakeholders / why it matters) ---------- */
+.overview-wrap { padding: clamp(32px, 5vw, 56px) 0; }
+.overview-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(22, 35, 58, 0.05);
+  padding: clamp(24px, 4vw, 44px);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.overview-part + .overview-part { padding-top: 28px; border-top: 1px solid var(--line); }
+.overview-part .lead { max-width: 80ch; margin-top: 10px; }
+.overview-part-title {
+  margin-top: 10px;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 22px;
+}
+.overview-question {
+  margin: 16px 0 0;
+  max-width: 80ch;
+  padding: 2px 0 2px 22px;
+  border-left: 4px solid var(--down);
+}
+.overview-question p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(19px, 2.2vw, 23px);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.stakeholders {
+  margin-top: 16px;
+  list-style: none; padding: 0;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px;
+}
+.stakeholder {
+  background: var(--page);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 16px 18px;
+  display: flex;
+  flex-direction: column;
+}
+.stakeholder-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 50%;
+  font-family: var(--sans); font-weight: 700; font-size: 12px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.stakeholder-a .stakeholder-mark { background: var(--nus); }
+.stakeholder-b .stakeholder-mark { background: var(--ntu); }
+.stakeholder-c .stakeholder-mark { background: var(--smu); }
+.stakeholder-d .stakeholder-mark { background: var(--sit); }
+.stakeholder h4 { font-size: 16px; }
+.stakeholder p { margin-top: 6px; font-size: 14.5px; color: var(--text); }
 
 /* ---------- Why ---------- */
 .why-list {
+  margin-top: 20px;
   list-style: none; padding: 0;
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;
 }
-.why-list li { border-top: 1px solid var(--line-strong); padding-top: 16px; }
-.why-list p { margin-top: 8px; color: var(--text); }
+.why-list li {
+  background: var(--page);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px 18px;
+}
+.why-list p { margin-top: 6px; color: var(--text); font-size: 15px; }
 .why-beyond {
-  margin-top: 36px; max-width: var(--text-max);
-  padding: 16px 20px;
+  margin-top: 20px; max-width: none;
+  padding: 14px 18px;
   background: var(--up-soft);
-  border-radius: 6px;
+  border-radius: 8px;
+  font-size: 15px;
   color: var(--ink);
 }
 
@@ -502,7 +571,10 @@ h3 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
   .hero-chart { max-width: 560px; }
   .notes { grid-template-columns: 1fr; }
   .notes > div + div { border-left: 0; border-top: 1px solid var(--line); }
-  .why-list, .recs { grid-template-columns: 1fr; gap: 20px; }
+  .why-list, .recs { grid-template-columns: 1fr; gap: 14px; }
+  .stakeholders { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .overview-panel { gap: 24px; }
+  .overview-part + .overview-part { padding-top: 22px; }
   .takeaways { grid-template-columns: 1fr 1fr; }
   .takeaways li:not(:nth-child(3n + 1)) { padding-left: 0; border-left: 0; }
   .takeaways li:nth-child(even) { padding-left: 24px; border-left: 1px solid var(--line); }
