@@ -1,6 +1,6 @@
 # Which Degree Pays Off?
 
-Project website for IS428 Visual Analytics, Group 2: a decade of Singapore Graduate Employment Survey results (2013–2025) in real 2024 dollars, told in seven chapters with eight embedded Tableau Public dashboards.
+Project website for IS428 Visual Analytics, Group 2: a decade of Singapore Graduate Employment Survey results (2013–2025) in real 2024 dollars, told in nine chapters with nine embedded Tableau Public dashboards.
 
 Plain HTML, CSS and JavaScript. No build step, no dependencies besides the Tableau Embedding API.
 
@@ -8,10 +8,10 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies besides the Table
 
 | Path | What it holds |
 | --- | --- |
-| `index.html` | All page content, including the eight dashboard slots and the Data & Methods section |
+| `index.html` | All page content, including the nine dashboard slots, their colour legends and the Data & Methods section |
 | `css/styles.css` | Layout, colours, fonts, responsive and print styles |
 | `js/main.js` | Mobile nav, scroll-spy, lazy-loading of embeds, "Copy embed code" and "Open in Tableau Public" buttons |
-| `assets/` | Favicon, and the dashboard preview images (`dashboard-1.png` … `dashboard-8.png`) you add |
+| `assets/` | Favicon, and the dashboard preview images (`dashboard-1.png` … `dashboard-8.png`, plus `dashboard-5a.png` and `dashboard-5b.png`) you add |
 | `vercel.json` | Clean URLs on Vercel |
 
 ## Preview locally
@@ -26,7 +26,7 @@ Then go to http://localhost:8000.
 
 ## 1. Publish the workbook
 
-1. In Tableau Desktop, open `Prrp_v2.twbx` and choose **File → Save to Tableau Public**. Publish once; every dashboard gets its own URL, `https://public.tableau.com/views/<WorkbookName>/<DashboardName>`.
+1. In Tableau Desktop, open `Prrp_v3.twbx` and choose **File → Save to Tableau Public**. Publish once; every dashboard gets its own URL, `https://public.tableau.com/views/<WorkbookName>/<DashboardName>`.
 2. On Tableau Public, turn off **Show Sheets as Tabs** so each embed shows one dashboard.
 3. Parameter actions (clicking a field, a programme or a peer) work on Tableau Public.
 
@@ -34,26 +34,29 @@ Then go to http://localhost:8000.
 
 Each dashboard has one slot in `index.html`:
 
-| Slot | Dashboard to embed | Section |
-| --- | --- | --- |
-| `viz-1` | `1 The Puzzle` | Chapter 1 |
-| `viz-2` | `2 What You Study` | Chapter 2 |
-| `viz-3` | `3 Where You Study` | Chapter 3 |
-| `viz-4` | `4 Trade-offs` | Chapter 4 |
-| `viz-5` | `5 What It Costs` | Chapter 5 |
-| `viz-6` | `6 Does It Last` | Chapter 6 |
-| `viz-7` | `7 Report Card` | Chapter 7 |
-| `viz-8` | `8 Data Coverage` | Data & Methods |
+| Slot | Dashboard to embed | Section | Anchor |
+| --- | --- | --- | --- |
+| `viz-1` | `1 The Puzzle` | Chapter 1 | `#puzzle` |
+| `viz-2` | `2 What You Study` | Chapter 2 | `#what-you-study` |
+| `viz-3` | `3 Where You Study` | Chapter 3 | `#where-you-study` |
+| `viz-4` | `4 Trade-offs` | Chapter 4 | `#trade-offs` |
+| `viz-5a` | `5a What It Costs` | Chapter 5 | `#cost` |
+| `viz-5b` | `5b Paying It Back` | Chapter 6 | `#payback` |
+| `viz-6` | `6 Does It Last` | Chapter 7 | `#does-it-last` |
+| `viz-7` | `7 Report Card` | Chapter 8 | `#report-card` |
+| `viz-8` | `8 Data Coverage` | Chapter 9 (Data & Methods) | `#data-methods` |
+
+Every slot already has its expected link in `data-src` (`https://public.tableau.com/views/Prrp_v3/<DashboardName>`). They start working once `Prrp_v3.twbx` is published to Tableau Public under that name.
 
 Search `index.html` for `id="viz-1"` (etc.) and use **one** of these options.
 
 **Option A (recommended): fill in `data-src`.**
 
 ```html
-<figure class="viz-slot" id="viz-1" data-dashboard="1 The Puzzle" ... data-src="https://public.tableau.com/views/Prrp_v2/1ThePuzzle">
+<figure class="viz-slot" id="viz-1" data-dashboard="1 The Puzzle" ... data-src="https://public.tableau.com/views/Prrp_v3/1ThePuzzle">
 ```
 
-The script loads the dashboard only when the reader scrolls near it (eight vizzes on one page are heavy), hides the placeholder, and points the "Open in Tableau Public" button at the same link. Both `/views/...` links and `/app/profile/<name>/viz/...` links work. The link Tableau shows right after publishing (`https://public.tableau.com:9443/views/...?:redirect=auth...`) only works while you are signed in; the script removes the `:9443` and everything after `?`, but the cleanest value is just `https://public.tableau.com/views/Prrp_v2/<DashboardName>`, e.g. `https://public.tableau.com/views/Prrp_v2/1ThePuzzle`.
+The script loads the dashboard only when the reader scrolls near it (nine vizzes on one page are heavy), hides the placeholder, and points the "Open in Tableau Public" button at the same link. Both `/views/...` links and `/app/profile/<name>/viz/...` links work. The link Tableau shows right after publishing (`https://public.tableau.com:9443/views/...?:redirect=auth...`) only works while you are signed in; the script removes the `:9443` and everything after `?`, but the cleanest value is just `https://public.tableau.com/views/Prrp_v3/<DashboardName>`, e.g. `https://public.tableau.com/views/Prrp_v3/1ThePuzzle`.
 
 **Option B: uncomment the snippet.** Inside each slot there is:
 
@@ -70,13 +73,17 @@ The "Copy embed code" button on each slot copies a ready-made `<tableau-viz>` li
 
 Each slot is 1200 × 870: the 1200 × 820 dashboard plus about 50 px for Tableau's toolbar. Below 900 px wide it scrolls sideways and shows "Best viewed on a laptop".
 
+## Colour legends
+
+The dashboards no longer carry their own colour legends, so each slot has a legend just above it (`<div class="legends">` with one `<ul class="legend">` per key). If a colour changes in Tableau, change the matching `--c:#xxxxxx` value there. The only legend kept inside Tableau is the Report Card pay-trend legend, because it changes with the selected programme.
+
 ## 3. Add preview images
 
-Export each dashboard from Tableau (**Dashboard → Export Image**) as `assets/dashboard-1.png` … `assets/dashboard-8.png`. They are used when the page is printed (embeds are hidden in print) and `dashboard-1.png` is the social-sharing image. After deploying, change the `og:image` meta tag in `index.html` to the full URL, e.g. `https://your-site.vercel.app/assets/dashboard-1.png`.
+Export each dashboard from Tableau (**Dashboard → Export Image**) as `assets/dashboard-1.png`, `dashboard-2.png`, `dashboard-3.png`, `dashboard-4.png`, `dashboard-5a.png`, `dashboard-5b.png`, `dashboard-6.png`, `dashboard-7.png` and `dashboard-8.png`. They are used when the page is printed (embeds are hidden in print) and `dashboard-1.png` is the social-sharing image. After deploying, change the `og:image` meta tag in `index.html` to the full URL, e.g. `https://your-site.vercel.app/assets/dashboard-1.png`.
 
 ## 4. Update copy
 
-All text lives in `index.html`. Every figure comes from `context.md` (sections A11 and A12). If a dashboard number changes, update it in:
+All text lives in `index.html`. Every figure comes from `changes.md` or `context.md` (sections A11 and A12); where they disagree, `changes.md` wins. If a dashboard number changes, update it in:
 
 - the hero (stat cards and the two slope charts; the SVG coordinates are commented with their scales),
 - the chapter lead and the "What this shows / Key insight / Why it matters" cards,

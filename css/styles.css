@@ -271,12 +271,30 @@ h3 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
 .chapter-feature .how-to { color: #dfe6ee; }
 .chapter-feature .how-to strong { color: #fff; }
 
-/* ---------- University key ---------- */
-.uni-key { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-bottom: 16px; font-size: 14px; }
-.uni-key-label { color: var(--muted); }
-.uni-key ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
-.uni-key li { display: flex; align-items: center; gap: 6px; font-weight: 600; color: var(--ink); }
-.swatch { width: 12px; height: 12px; border-radius: 50%; background: var(--c); display: inline-block; }
+.chapter-feature .footnote { color: #c8d2de; }
+.chapter-feature .footnote strong { color: #fff; }
+
+/* ---------- Colour legends (the dashboards no longer carry their own) ---------- */
+.legends {
+  display: flex; flex-wrap: wrap; gap: 14px 40px;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+.legend-group { min-width: 0; }
+.legend-title { font-weight: 600; color: var(--muted); margin-bottom: 6px; }
+.legend { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.legend li { display: flex; align-items: center; gap: 7px; color: var(--ink); font-weight: 500; }
+.legend-note { margin-top: 6px; color: var(--muted); font-size: 13px; }
+.swatch { flex: none; width: 12px; height: 12px; border-radius: 50%; background: var(--c); display: inline-block; box-shadow: inset 0 0 0 1px rgba(22, 35, 58, 0.15); }
+.swatch-bar { border-radius: 2px; }
+.swatch-line { height: 3px; width: 18px; border-radius: 2px; box-shadow: none; }
+.chapter-feature .legend-title, .chapter-feature .legend-note { color: #c8d2de; }
+.chapter-feature .legend li { color: #fff; }
+
+.block-note { margin-top: 10px; font-size: 15.5px; color: var(--text); }
+.footnote { margin-top: 10px; font-size: 14px; color: var(--muted); }
+.footnote strong { color: var(--ink); }
+.rc-sub { margin-top: 18px; }
 
 /* ---------- Embed slot ---------- */
 .viz-slot { margin: 0; }
