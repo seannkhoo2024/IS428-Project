@@ -38,10 +38,13 @@
     if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
       current = targets[targets.length - 1];
     }
-    links.forEach((a) => {
-      const on = a === current.a;
-      a.classList.toggle("is-active", on);
-      if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+    const currentIndex = targets.indexOf(current);
+    targets.forEach((t, i) => {
+      const on = t === current;
+      t.a.classList.toggle("is-active", on);
+      // Story chapters already read show as done on the nav's story track.
+      t.a.classList.toggle("is-done", !on && i < currentIndex && !!t.a.closest(".nav-story"));
+      if (on) t.a.setAttribute("aria-current", "true"); else t.a.removeAttribute("aria-current");
     });
   }
   let ticking = false;
@@ -73,7 +76,34 @@
 
   function snippetFor(src) {
     return '<tableau-viz src="' + (src || "PUBLIC_URL") +
-      '" width="1200" height="870" toolbar="bottom" hide-tabs></tableau-viz>';
+      '" width="1600" height="950" toolbar="bottom" hide-tabs></tableau-viz>';
+  }
+
+  // Frame size. The published dashboards are fixed-size (1600 × 900 at the
+  // moment); the frame adds room for Tableau's bottom toolbar. Once a
+  // dashboard loads, its real size is read from Tableau, so a size change in
+  // the workbook does not need a change here.
+  const DEFAULT_W = 1600;
+  const DEFAULT_H = 900;
+  const TOOLBAR_H = 50;
+
+  function setFrameSize(canvas, w, h) {
+    canvas.dataset.vizW = w;
+    canvas.dataset.vizH = h;
+    canvas.style.setProperty("--viz-w", w + "px");
+    canvas.style.setProperty("--viz-h", h + "px");
+    canvas.style.aspectRatio = w + " / " + h;
+    const viz = canvas.querySelector("tableau-viz");
+    if (viz) { viz.setAttribute("width", String(w)); viz.setAttribute("height", String(h)); }
+    fitCanvas(canvas);
+  }
+
+  // Scale the fixed-size dashboard to the canvas width, so Tableau never
+  // shows its own scrollbars inside a narrower card.
+  function fitCanvas(canvas) {
+    const w = Number(canvas.dataset.vizW) || DEFAULT_W;
+    const scale = Math.min(1, canvas.clientWidth / w);
+    canvas.style.setProperty("--viz-scale", scale.toFixed(4));
   }
 
   function mountViz(slot, src) {
@@ -81,10 +111,17 @@
     if (canvas.querySelector("tableau-viz, iframe")) return;
     const viz = document.createElement("tableau-viz");
     viz.setAttribute("src", src);
-    viz.setAttribute("width", "1200");
-    viz.setAttribute("height", "870");
+    viz.setAttribute("width", String(Number(canvas.dataset.vizW) || DEFAULT_W));
+    viz.setAttribute("height", String(Number(canvas.dataset.vizH) || DEFAULT_H + TOOLBAR_H));
     viz.setAttribute("toolbar", "bottom");
     viz.setAttribute("hide-tabs", "");
+    viz.addEventListener("firstinteractive", () => {
+      try {
+        const size = viz.workbook.activeSheet.size;
+        const s = size && (size.maxSize || size.minSize);
+        if (s && s.width > 0 && s.height > 0) setFrameSize(canvas, s.width, s.height + TOOLBAR_H);
+      } catch (_) { /* keep the default frame */ }
+    });
     canvas.appendChild(viz);
     slot.classList.add("is-embedded");
   }
@@ -160,6 +197,18 @@
     ta.select();
     try { document.execCommand("copy"); done(); } catch (_) { /* nothing else to try */ }
     ta.remove();
+  }
+
+  // Keep every frame scaled to its card as the window resizes.
+  const canvases = [...document.querySelectorAll(".viz-canvas")];
+  canvases.forEach((c) => { if (!c.dataset.vizW) setFrameSize(c, DEFAULT_W, DEFAULT_H + TOOLBAR_H); });
+  if ("ResizeObserver" in window) {
+    const fit = new ResizeObserver((entries) => entries.forEach((e) => fitCanvas(e.target)));
+    canvases.forEach((c) => fit.observe(c));
+  } else {
+    const fitAll = () => canvases.forEach(fitCanvas);
+    window.addEventListener("resize", fitAll);
+    fitAll();
   }
 
   // Before printing, open every accordion so the methods text is included.

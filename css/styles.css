@@ -99,18 +99,62 @@ code {
   white-space: nowrap;
 }
 .brand:hover { color: #fff; }
-.nav { display: flex; flex-wrap: nowrap; }
-.nav a {
-  color: #c8d2de;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 19px 9px 17px;
-  border-bottom: 3px solid transparent;
-  white-space: nowrap;
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
-.nav a:hover { color: #fff; }
-.nav a.is-active { color: #fff; border-bottom-color: var(--nus); }
+
+/* Nav = a story: chapters 1–7 are numbered steps on one track; the
+   report card and data & methods sit apart as tools. */
+.nav { display: flex; align-items: center; gap: 14px; }
+.nav a { text-decoration: none; white-space: nowrap; }
+.nav-group { display: flex; align-items: center; }
+.nav-group-label { display: none; }
+
+.nav-plain {
+  color: #c8d2de; font-size: 14px; font-weight: 500;
+  padding: 19px 8px 17px;
+  border-bottom: 3px solid transparent;
+}
+.nav-plain:hover { color: #fff; }
+.nav-plain.is-active { color: #fff; border-bottom-color: var(--nus); }
+
+.nav-group-story { padding: 0 6px; border-left: 1px solid #33466a; border-right: 1px solid #33466a; }
+.nav-story { list-style: none; margin: 0; padding: 0 4px; display: flex; align-items: center; position: relative; }
+.nav-story::before {               /* the story track behind the steps */
+  content: ""; position: absolute; left: 18px; right: 18px; top: 50%;
+  height: 2px; background: #33466a; transform: translateY(-1px);
+}
+.nav-story li { position: relative; }
+.nav-story a {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 5px;
+  color: #c8d2de; font-size: 13px; font-weight: 500;
+}
+.nav-story .step {
+  flex: none;
+  display: grid; place-items: center;
+  width: 22px; height: 22px; border-radius: 50%;
+  font-size: 12px; font-weight: 700; line-height: 1;
+  color: #c8d2de; background: var(--ink);
+  border: 2px solid #50627a;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.nav-story .step-label { background: var(--ink); padding-right: 2px; }
+.nav-story a:hover, .nav-story a:hover .step { color: #fff; border-color: #c8d2de; }
+.nav-story a.is-done .step { background: #50627a; border-color: #50627a; color: #fff; }
+.nav-story a.is-active { color: #fff; }
+.nav-story a.is-active .step { background: var(--nus); border-color: var(--nus); color: var(--ink); }
+
+.nav-group-tools { gap: 8px; }
+.nav-tool {
+  color: #fff; font-size: 13px; font-weight: 600;
+  padding: 6px 12px;
+  border: 1px solid #50627a; border-radius: 999px;
+}
+.nav-tool:hover { border-color: #c8d2de; color: #fff; }
+.nav-tool.is-active { background: #fff; border-color: #fff; color: var(--ink); }
+
 .nav-toggle {
   display: none;
   font: 500 15px var(--sans);
@@ -119,21 +163,38 @@ code {
   padding: 7px 14px; cursor: pointer;
 }
 
+/* Medium widths: numbers only, except the chapter you are in. */
+@media (max-width: 1340px) {
+  .nav-story .step-label { display: none; }
+  .nav-story a.is-active .step-label { display: inline; }
+}
+
 @media (max-width: 1100px) {
   .nav-toggle { display: block; }
   .nav {
     display: none;
     position: absolute; left: 0; right: 0; top: 100%;
-    flex-direction: column;
+    flex-direction: column; align-items: stretch; gap: 0;
     background: var(--ink);
-    padding: 4px var(--gutter) 16px;
+    padding: 4px var(--gutter) 18px;
     border-top: 1px solid #2b3b55;
     max-height: calc(100vh - var(--nav-h));
     overflow-y: auto;
   }
   .nav.open { display: flex; }
-  .nav a { padding: 12px 0; border-bottom: 1px solid #2b3b55; font-size: 16px; }
-  .nav a.is-active { border-bottom-color: #2b3b55; color: #fff; box-shadow: inset 4px 0 0 var(--nus); padding-left: 14px; }
+  .nav-group { flex-direction: column; align-items: stretch; }
+  .nav-group-start { flex-direction: row; gap: 18px; border-bottom: 1px solid #2b3b55; }
+  .nav-plain { padding: 12px 0; font-size: 16px; border-bottom: 0; }
+  .nav-plain.is-active { border-bottom: 0; box-shadow: inset 0 -3px 0 var(--nus); }
+  .nav-group-story { border: 0; padding: 0; }
+  .nav-group-label { display: block; margin: 14px 0 4px; font-size: 13px; font-weight: 600; color: #8fa1b8; }
+  .nav-story { flex-direction: column; align-items: stretch; padding: 0; }
+  .nav-story::before { left: 11px; right: auto; top: 12px; bottom: 12px; width: 2px; height: auto; transform: none; }
+  .nav-story a { padding: 9px 0; font-size: 16px; gap: 12px; }
+  .nav-story .step-label, .nav-story a.is-active .step-label { display: none; }
+  .nav-story .sr-only { position: static; width: auto; height: auto; margin: 0; clip: auto; overflow: visible; }
+  .nav-group-tools { flex-direction: row; flex-wrap: wrap; gap: 10px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #2b3b55; }
+  .nav-tool { font-size: 15px; padding: 8px 14px; }
 }
 
 /* ---------- Layout ---------- */
@@ -250,6 +311,77 @@ main {
 .block-lead { margin-top: 12px; font-size: 19px; color: var(--text); }
 h3 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 18px; line-height: 1.35; }
 h4 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 16px; line-height: 1.35; }
+
+/* ---------- Explore: three ways into the dashboards ---------- */
+.explore-wrap { padding: 0 0 clamp(8px, 2vw, 16px); }
+.explore-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(22, 35, 58, 0.05);
+  padding: clamp(22px, 3.5vw, 36px);
+}
+.explore-panel h2 {
+  font-family: var(--serif); font-weight: 700; color: var(--ink);
+  font-size: clamp(28px, 3.2vw, 38px); line-height: 1.1;
+}
+.explore-lead { margin-top: 8px; font-size: 17px; color: var(--muted); }
+.explore-grid {
+  margin-top: 24px;
+  display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 16px;
+  align-items: start;
+}
+.explore-card {
+  display: flex; flex-direction: column; gap: 8px;
+  height: 100%;
+  padding: 20px 22px 22px;
+  background: var(--page);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.explore-card-story { background: var(--ink); border-color: var(--ink); color: #dfe6ee; }
+.explore-card-story h3 { color: #fff; }
+.explore-tag { font-size: 13px; font-weight: 600; color: var(--down); }
+.explore-card-story .explore-tag { color: #f6b26b; }
+.explore-card h3 { font-family: var(--serif); font-size: 23px; font-weight: 700; }
+.explore-card > p:not(.explore-tag) { font-size: 15.5px; line-height: 1.55; }
+.explore-actions { margin-top: auto; padding-top: 10px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.explore-card-story .btn-primary { background: #fff; border-color: #fff; color: var(--ink); }
+.explore-card-story .btn-primary:hover { background: #e8edf3; border-color: #e8edf3; color: var(--ink); }
+.explore-card-tool .btn-secondary { background: var(--surface); }
+
+.chapter-menu { width: 100%; }
+.chapter-menu summary {
+  display: inline-flex; align-items: center; gap: 8px;
+  cursor: pointer; list-style: none;
+  font-size: 15px; font-weight: 600; color: #fff;
+  padding: 8px 14px;
+  border: 1px solid #50627a; border-radius: 6px;
+}
+.chapter-menu summary::-webkit-details-marker { display: none; }
+.chapter-menu summary::after {
+  content: ""; width: 7px; height: 7px;
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.15s;
+}
+.chapter-menu[open] summary::after { transform: translateY(2px) rotate(-135deg); }
+.chapter-menu summary:hover { border-color: #c8d2de; }
+.chapter-menu ul { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 6px; }
+.chapter-menu a {
+  display: block;
+  padding: 8px 12px;
+  font-size: 14.5px; font-weight: 500; text-decoration: none;
+  color: #fff; background: #1f3050;
+  border: 1px solid #33466a; border-radius: 6px;
+}
+.chapter-menu a:hover { background: #2a3e63; border-color: #50627a; color: #fff; }
+@media (prefers-reduced-motion: reduce) {
+  .chapter-menu summary::after, .nav-story .step { transition: none; }
+}
+@media (max-width: 960px) {
+  .explore-grid { grid-template-columns: 1fr; }
+}
 
 /* ---------- Overview (problem / stakeholders / why it matters) ---------- */
 .overview-wrap { padding: clamp(32px, 5vw, 56px) 0; }
@@ -454,6 +586,21 @@ h4 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
   border-color: rgba(255, 255, 255, 0.14);
   box-shadow: none;
 }
+
+/* Dashboard cards (and the dark report-card section) are wider than the text
+   column so the 1600 px dashboards need less shrinking: up to the window
+   width minus the page margins, capped at full size. */
+@media (min-width: 700px) {
+  :root { --wide: min(calc(100vw - 2 * var(--gutter) - 17px), 1680px); }
+  .viz-slot,
+  .chapter-feature {
+    width: var(--wide);
+    max-width: none;
+    margin-left: calc(50% - var(--wide) / 2);
+    margin-right: calc(50% - var(--wide) / 2);
+  }
+  .chapter-feature .viz-slot { width: auto; margin-left: 0; margin-right: 0; }
+}
 .viz-bar {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
   gap: 8px 16px; margin-bottom: 14px;
@@ -497,20 +644,29 @@ h4 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
 .viz-canvas {
   position: relative;
   width: 100%;
-  max-width: 1200px;
-  min-width: 900px;            /* below 900px the slot scrolls sideways */
-  aspect-ratio: 1200 / 870;   /* 820 px dashboard + ~50 px Tableau toolbar */
+  max-width: none;
+  min-width: 0;                /* scaled to fit; phones scroll sideways instead (below) */
+  aspect-ratio: 1600 / 950;   /* 900 px dashboard + ~50 px Tableau toolbar; js/main.js updates it per dashboard */
   margin: 0 auto;
   background: var(--surface);
   border-radius: 8px;
 }
+/* The dashboards are fixed-size (1600 × 900 now, plus the toolbar). Rendering
+   them at that size and scaling the whole frame to the canvas width (js/main.js
+   sets --viz-w, --viz-h and --viz-scale) keeps Tableau from adding its own
+   scrollbars when the card is
+   narrower than the dashboard. */
+.viz-canvas { --viz-scale: 1; overflow: hidden; }
 .viz-canvas tableau-viz,
-.viz-canvas iframe,
+.viz-canvas > iframe,
 .viz-canvas .tableauPlaceholder {
   display: block;
-  width: 100% !important;
-  height: 100% !important;
+  position: absolute; top: 0; left: 0;
+  width: var(--viz-w, 1600px) !important;
+  height: var(--viz-h, 950px) !important;
   border: 0;
+  transform: scale(var(--viz-scale));
+  transform-origin: 0 0;
 }
 .viz-placeholder {
   position: absolute; inset: 0;
@@ -538,7 +694,8 @@ h4 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
 .chapter-feature .viz-mobile-note { color: #f6b26b; }
 .viz-print { display: none; }
 
-@media (max-width: 899px) {
+@media (max-width: 699px) {
+  .viz-canvas { min-width: 900px; }
   .viz-mobile-note { display: block; }
 }
 

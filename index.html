@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=3" />
+  <link rel="stylesheet" href="css/styles.css?v=4" />
 
   <!-- Tableau Embedding API v3: powers the <tableau-viz> elements below.
        Remove this line if you switch to the older iframe embed code from Tableau Public's Share button. -->
@@ -32,16 +32,26 @@
       <a class="brand" href="#home">Which Degree Pays Off?</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" class="nav" aria-label="Sections">
-        <a href="#home">Home</a>
-        <a href="#team">Team</a>
-        <a href="#puzzle">The Puzzle</a>
-        <a href="#what-where">What &amp; Where</a>
-        <a href="#trade-offs">Trade-offs</a>
-        <a href="#cost">Cost</a>
-        <a href="#payback">Payback</a>
-        <a href="#does-it-last">Does It Last</a>
-        <a href="#report-card">Report Card</a>
-        <a href="#data-methods">Data &amp; Methods</a>
+        <div class="nav-group nav-group-start">
+          <a class="nav-plain" href="#home">Home</a>
+          <a class="nav-plain" href="#team">Team</a>
+        </div>
+        <div class="nav-group nav-group-story">
+          <p class="nav-group-label" id="nav-story-label">The story</p>
+          <ol class="nav-story" aria-labelledby="nav-story-label">
+            <li><a href="#puzzle" title="Chapter 1: The Puzzle"><span class="step" aria-hidden="true">1</span><span class="step-label" aria-hidden="true">Puzzle</span><span class="sr-only">Chapter 1: The Puzzle</span></a></li>
+            <li><a href="#what-you-study" title="Chapter 2: What You Study"><span class="step" aria-hidden="true">2</span><span class="step-label" aria-hidden="true">What</span><span class="sr-only">Chapter 2: What You Study</span></a></li>
+            <li><a href="#where-you-study" title="Chapter 3: Where You Study"><span class="step" aria-hidden="true">3</span><span class="step-label" aria-hidden="true">Where</span><span class="sr-only">Chapter 3: Where You Study</span></a></li>
+            <li><a href="#trade-offs" title="Chapter 4: Trade-offs"><span class="step" aria-hidden="true">4</span><span class="step-label" aria-hidden="true">Trade-offs</span><span class="sr-only">Chapter 4: Trade-offs</span></a></li>
+            <li><a href="#cost" title="Chapter 5: What It Costs"><span class="step" aria-hidden="true">5</span><span class="step-label" aria-hidden="true">Cost</span><span class="sr-only">Chapter 5: What It Costs</span></a></li>
+            <li><a href="#payback" title="Chapter 6: Paying It Back"><span class="step" aria-hidden="true">6</span><span class="step-label" aria-hidden="true">Payback</span><span class="sr-only">Chapter 6: Paying It Back</span></a></li>
+            <li><a href="#does-it-last" title="Chapter 7: Does It Last?"><span class="step" aria-hidden="true">7</span><span class="step-label" aria-hidden="true">Lasting</span><span class="sr-only">Chapter 7: Does It Last?</span></a></li>
+          </ol>
+        </div>
+        <div class="nav-group nav-group-tools">
+          <a class="nav-tool" href="#report-card">Report card</a>
+          <a class="nav-tool" href="#data-methods">Data &amp; methods</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -205,6 +215,55 @@
       </div>
     </section>
 
+    <!-- ================= EXPLORE: THREE WAYS IN ================= -->
+    <section id="explore" class="explore-wrap" aria-labelledby="explore-title">
+      <div class="explore-panel">
+        <h2 id="explore-title">Explore the dashboards</h2>
+        <p class="explore-lead">Read the full story, look up one programme, or check where the numbers come from.</p>
+
+        <div class="explore-grid">
+          <article class="explore-card explore-card-story">
+            <p class="explore-tag">Chapters 1 to 7</p>
+            <h3>The story</h3>
+            <p>Follow a decade of graduate outcomes in order: pay up and permanent jobs down, what and where you study, the trade-offs, what a degree costs, how long it takes to pay back, and whether the leaders last.</p>
+            <div class="explore-actions">
+              <a class="btn btn-primary" href="#puzzle">Go to Story</a>
+              <details class="chapter-menu">
+                <summary>Jump to a chapter</summary>
+                <ul>
+                  <li><a href="#puzzle">Go to Chapter 1: The Puzzle</a></li>
+                  <li><a href="#what-you-study">Go to Chapter 2: What You Study</a></li>
+                  <li><a href="#where-you-study">Go to Chapter 3: Where You Study</a></li>
+                  <li><a href="#trade-offs">Go to Chapter 4: Trade-offs</a></li>
+                  <li><a href="#cost">Go to Chapter 5: What It Costs</a></li>
+                  <li><a href="#payback">Go to Chapter 6: Paying It Back</a></li>
+                  <li><a href="#does-it-last">Go to Chapter 7: Does It Last?</a></li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+          <article class="explore-card explore-card-tool">
+            <p class="explore-tag">Chapter 8</p>
+            <h3>Your programme</h3>
+            <p>Pick one programme and your student group to see its pay, permanent-job rate, payback and real pay growth on one screen, next to the same course at other universities.</p>
+            <div class="explore-actions">
+              <a class="btn btn-secondary" href="#report-card">Look up your programme</a>
+            </div>
+          </article>
+
+          <article class="explore-card explore-card-tool">
+            <p class="explore-tag">Chapter 9</p>
+            <h3>Data &amp; methods</h3>
+            <p>See where the numbers come from, how we cleaned and inflation-adjusted them, and how reliable each programme-year is.</p>
+            <div class="explore-actions">
+              <a class="btn btn-secondary" href="#data-methods">Check the data behind it</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= CHAPTER 1: THE PUZZLE ================= -->
     <section id="puzzle" class="chapter" aria-labelledby="ch1-title">
       <header class="chapter-head">
@@ -235,12 +294,12 @@
         <div class="viz-scroll" tabindex="0" role="region" aria-label="Dashboard 1, The Puzzle">
           <div class="viz-canvas">
             <!-- Replace PUBLIC_URL with the Tableau Public share link for this dashboard -->
-            <!-- <tableau-viz src="PUBLIC_URL" width="1200" height="870" toolbar="bottom" hide-tabs></tableau-viz> -->
+            <!-- <tableau-viz src="PUBLIC_URL" width="1600" height="950" toolbar="bottom" hide-tabs></tableau-viz> -->
             <div class="viz-placeholder">
               <p class="ph-title">Embed Tableau dashboard here: <code>1 The Puzzle</code></p>
               <dl class="ph-meta">
                 <div><dt>Workbook</dt><dd>Prrp_v3.twbx</dd></div>
-                <div><dt>Size</dt><dd>1200 × 820 px</dd></div>
+                <div><dt>Size</dt><dd>1600 × 900 px</dd></div>
                 <div><dt>Sheets</dt><dd>D1 KPI Median Pay, D1 KPI Permanent Rate, D1 Real Pay Trend, D1 Employment Mix</dd></div>
               </dl>
               <p class="ph-how">Paste the Tableau Public link into <code>data-src</code> on this figure, or uncomment the <code>&lt;tableau-viz&gt;</code> snippet above it in index.html.</p>
@@ -264,15 +323,15 @@
       <dl class="notes">
         <div>
           <dt>What this shows</dt>
-          <dd>Two tiles give the 2025 median pay and full-time permanent rate. The line traces real median starting pay from 2013 to 2025. The stacked area splits employment into full-time permanent and other jobs, with the overall employment rate as a line.</dd>
+          <dd>Two tiles show the 2025 median pay and full-time permanent rate. The line tracks real median starting pay from 2013 to 2025. The stacked area splits employed graduates into those in full-time permanent jobs and those in other work, and a line marks the overall employment rate.</dd>
         </div>
         <div>
           <dt>Key insight</dt>
-          <dd>Pay rose 23.9% in real terms, with a dip in 2021 (S$4,034). The permanent rate bottomed at 69.0% in 2020, recovered to 88.6% in 2022, then fell to 73.4%. Overall employment was 94.7% in 2020 but only 83.3% in 2025: in 2020 most graduates found some job, in 2025 fewer found any job within six months.</dd>
+          <dd>Real pay rose 23.9%, with a dip in 2021 (S$4,034). The permanent rate fell to 69.0% in 2020, recovered to 88.6% in 2022, then dropped to 73.4%. Overall employment was 94.7% in 2020 but only 83.3% in 2025: in 2020 most graduates found some kind of job, while in 2025 fewer found any job within six months.</dd>
         </div>
         <div>
           <dt>Why it matters</dt>
-          <dd>The "average graduate" story hides a job-security squeeze, and it is broad-based: every university's median permanent rate fell from 2022 to 2025 (NUS 91.4% to 79.1%, NTU 87.1% to 71.4%, SUSS 83.3% to 69.7%). The rest of the site looks at who is affected.</dd>
+          <dd>The "average graduate" figures hide a squeeze on job security, and it reaches every university: each one's median permanent rate fell from 2022 to 2025 (NUS 91.4% to 79.1%, NTU 87.1% to 71.4%, SUSS 83.3% to 69.7%). The chapters that follow look at who is affected.</dd>
         </div>
       </dl>
       <div class="gains" aria-label="How each stakeholder can use this dashboard">
@@ -339,12 +398,12 @@
           <div class="viz-scroll" tabindex="0" role="region" aria-label="Dashboard 2, What You Study">
             <div class="viz-canvas">
               <!-- Replace PUBLIC_URL with the Tableau Public share link for this dashboard -->
-              <!-- <tableau-viz src="PUBLIC_URL" width="1200" height="870" toolbar="bottom" hide-tabs></tableau-viz> -->
+              <!-- <tableau-viz src="PUBLIC_URL" width="1600" height="950" toolbar="bottom" hide-tabs></tableau-viz> -->
               <div class="viz-placeholder">
                 <p class="ph-title">Embed Tableau dashboard here: <code>2 What You Study</code></p>
                 <dl class="ph-meta">
                   <div><dt>Workbook</dt><dd>Prrp_v3.twbx</dd></div>
-                  <div><dt>Size</dt><dd>1200 × 820 px</dd></div>
+                  <div><dt>Size</dt><dd>1600 × 900 px</dd></div>
                   <div><dt>Sheets</dt><dd>D2 Field Ranking, D2 Programme Strip Plot</dd></div>
                 </dl>
                 <p class="ph-how">Paste the Tableau Public link into <code>data-src</code> on this figure, or uncomment the <code>&lt;tableau-viz&gt;</code> snippet above it in index.html.</p>
@@ -367,15 +426,15 @@
         <dl class="notes">
           <div>
             <dt>What this shows</dt>
-            <dd>The field ranking (a bump chart) sits above a strip plot of every 2025 programme. The ranking orders fields by median starting pay each year (fields with three or more programmes that year). The strip plot places each programme in its field, coloured by university, with a dashed line at the field median.</dd>
+            <dd>The top chart ranks fields by median starting pay each year, counting only fields with three or more programmes that year. Below it, a strip plot places every 2025 programme in its field, coloured by university, with a dashed line at the field median.</dd>
           </div>
           <div>
             <dt>Key insight</dt>
-            <dd>Information &amp; Digital Technologies ranks 1st in every year from 2013 to 2025 (2025 field median S$4,996), and Engineering is 2nd in 11 of 13 years. Health Sciences fell from 2nd (2014–2016) to 8th in 2025. Arts, Design &amp; Media stays near the bottom (S$3,741).</dd>
+            <dd>Information &amp; Digital Technologies ranks 1st every year from 2013 to 2025 (2025 field median S$4,996), and Engineering is 2nd in 11 of the 13 years. Health Sciences slid from 2nd (2014 to 2016) to 8th in 2025, and Arts, Design &amp; Media stays near the bottom (S$3,741).</dd>
           </div>
           <div>
             <dt>Why it matters</dt>
-            <dd>The spread inside a field is wider than the gap between most field medians (S$3,741–4,996). Choosing a field is necessary but not sufficient; the specific programme matters, as Altonji, Blom &amp; Meghir (2012) found for college majors.</dd>
+            <dd>Programmes inside one field vary more than the field medians do (S$3,741 to S$4,996). Picking a field narrows your options, but the specific programme still matters, as Altonji, Blom &amp; Meghir (2012) found for college majors.</dd>
           </div>
         </dl>
         <div class="gains" aria-label="How each stakeholder can use this dashboard">
@@ -429,12 +488,12 @@
           <div class="viz-scroll" tabindex="0" role="region" aria-label="Dashboard 3, Where You Study">
             <div class="viz-canvas">
               <!-- Replace PUBLIC_URL with the Tableau Public share link for this dashboard -->
-              <!-- <tableau-viz src="PUBLIC_URL" width="1200" height="870" toolbar="bottom" hide-tabs></tableau-viz> -->
+              <!-- <tableau-viz src="PUBLIC_URL" width="1600" height="950" toolbar="bottom" hide-tabs></tableau-viz> -->
               <div class="viz-placeholder">
                 <p class="ph-title">Embed Tableau dashboard here: <code>3 Where You Study</code></p>
                 <dl class="ph-meta">
                   <div><dt>Workbook</dt><dd>Prrp_v3.twbx</dd></div>
-                  <div><dt>Size</dt><dd>1200 × 820 px</dd></div>
+                  <div><dt>Size</dt><dd>1600 × 900 px</dd></div>
                   <div><dt>Sheets</dt><dd>D3 Field by University, D3 Premium vs Field Median</dd></div>
                 </dl>
                 <p class="ph-how">Paste the Tableau Public link into <code>data-src</code> on this figure, or uncomment the <code>&lt;tableau-viz&gt;</code> snippet above it in index.html.</p>
@@ -457,15 +516,15 @@
         <dl class="notes">
           <div>
             <dt>What this shows</dt>
-            <dd>On the left, a dot plot of median pay for each field and university. On the right, diverging bars for each programme in the chosen field and year: its median minus the field median, blue above and orange below.</dd>
+            <dd>The left chart plots median pay for each field and university. The right chart takes the chosen field and year and shows how far each programme's median sits above (blue) or below (orange) the field median.</dd>
           </div>
           <div>
             <dt>Key insight</dt>
-            <dd>Computer Science runs from S$4,489 (SIT, CS in Interactive Media &amp; Game Development) to S$6,301 (NUS), a 40% gap. Business spans S$4,430–5,907 (33%) and Computer Engineering S$4,464–5,513 (24%). The top 2025 programme is NTU's Business &amp; Computing double degree at S$6,842.</dd>
+            <dd>Computer Science pays from S$4,489 (SIT, CS in Interactive Media &amp; Game Development) to S$6,301 (NUS), a 40% gap. Business ranges from S$4,430 to S$5,907 (33%) and Computer Engineering from S$4,464 to S$5,513 (24%). The best-paid 2025 programme is NTU's Business &amp; Computing double degree at S$6,842.</dd>
           </div>
           <div>
             <dt>Why it matters</dt>
-            <dd>University medians (SUTD S$4,868, NUS S$4,568, SMU S$4,480, NTU S$4,430, SIT S$4,184, SUSS S$3,938) hide programme mix: SIT's game-design CS pays like an arts degree, while its simulation CS (S$4,922) matches SUTD. Compare within a field or discipline.</dd>
+            <dd>University medians (SUTD S$4,868, NUS S$4,568, SMU S$4,480, NTU S$4,430, SIT S$4,184, SUSS S$3,938) depend on each university's mix of programmes. SIT's game-design CS pays like an arts degree, while its simulation CS (S$4,922) matches SUTD. Compare programmes within a field or discipline, not university averages.</dd>
           </div>
         </dl>
         <div class="gains" aria-label="How each stakeholder can use this dashboard">
@@ -532,12 +591,12 @@
         <div class="viz-scroll" tabindex="0" role="region" aria-label="Dashboard 4, Trade-offs">
           <div class="viz-canvas">
             <!-- Replace PUBLIC_URL with the Tableau Public share link for this dashboard -->
-            <!-- <tableau-viz src="PUBLIC_URL" width="1200" height="870" toolbar="bottom" hide-tabs></tableau-viz> -->
+            <!-- <tableau-viz src="PUBLIC_URL" width="1600" height="950" toolbar="bottom" hide-tabs></tableau-viz> -->
             <div class="viz-placeholder">
               <p class="ph-title">Embed Tableau dashboard here: <code>4 Trade-offs</code></p>
               <dl class="ph-meta">
                 <div><dt>Workbook</dt><dd>Prrp_v3.twbx</dd></div>
-                <div><dt>Size</dt><dd>1200 × 820 px</dd></div>
+                <div><dt>Size</dt><dd>1600 × 900 px</dd></div>
                 <div><dt>Sheets</dt><dd>D4 Pay vs Employment, D4 Spread vs Pay</dd></div>
               </dl>
               <p class="ph-how">Paste the Tableau Public link into <code>data-src</code> on this figure, or uncomment the <code>&lt;tableau-viz&gt;</code> snippet above it in index.html.</p>
@@ -560,15 +619,15 @@
       <dl class="notes">
         <div>
           <dt>What this shows</dt>
-          <dd>A quadrant chart of full-time permanent rate against median pay (bubble size is graduates; reference lines at the year's medians), and a scatter of pay spread (IQR ÷ median) against median pay.</dd>
+          <dd>The left chart plots each programme's full-time permanent rate against its median pay. Bubble size is the number of graduates, and the reference lines mark the year's medians. The right chart plots pay spread (IQR ÷ median) against median pay.</dd>
         </div>
         <div>
           <dt>Key insight</dt>
-          <dd>The 118 programmes in 2025 split almost evenly: 32 high pay and high employment, 30 high pay with lower employment, 27 lower pay with high employment, 29 lower on both. The correlation between pay and permanent rate is only r = 0.29.</dd>
+          <dd>The 118 programmes in 2025 split almost evenly across the four quadrants: 32 high pay and high employment, 30 high pay with lower employment, 27 lower pay with high employment and 29 lower on both. Pay and permanent rate are only weakly correlated (r = 0.29).</dd>
         </div>
         <div>
           <dt>Why it matters</dt>
-          <dd>Better-paid programmes tend to have a wider relative spread (r = 0.48); NUS Business Administration's IQR is 83% of its median, so a high median is no guarantee. The lowest permanent rates: NTU Art, Design &amp; Media 34.8%, NUS Landscape Architecture 40.0%.</dd>
+          <dd>Better-paid programmes also tend to have a wider relative spread (r = 0.48). NUS Business Administration's IQR is 83% of its median, so a high median doesn't guarantee a high salary. The lowest permanent rates are NTU Art, Design &amp; Media (34.8%) and NUS Landscape Architecture (40.0%).</dd>
         </div>
       </dl>
       <div class="gains" aria-label="How each stakeholder can use this dashboard">
@@ -615,12 +674,12 @@
         <div class="viz-scroll" tabindex="0" role="region" aria-label="Dashboard 5a, What It Costs">
           <div class="viz-canvas">
             <!-- Replace PUBLIC_URL with the Tableau Public share link for this dashboard -->
-            <!-- <tableau-viz src="PUBLIC_URL" width="1200" height="870" toolbar="bottom" hide-tabs></tableau-viz> -->
+            <!-- <tableau-viz src="PUBLIC_URL" width="1600" height="950" toolbar="bottom" hide-tabs></tableau-viz> -->
             <div class="viz-placeholder">
               <p class="ph-title">Embed Tableau dashboard here: <code>5a What It Costs</code></p>
               <dl class="ph-meta">
                 <div><dt>Workbook</dt><dd>Prrp_v3.twbx</dd></div>
-                <div><dt>Size</dt><dd>1200 × 820 px</dd></div>
+                <div><dt>Size</dt><dd>1600 × 900 px</dd></div>
                 <div><dt>Sheets</dt><dd>D5a Tuition by Group, D5a Fee Ladder</dd></div>
               </dl>
               <p class="ph-how">Paste the Tableau Public link into <code>data-src</code> on this figure, or uncomment the <code>&lt;tableau-viz&gt;</code> snippet above it in index.html.</p>
@@ -643,15 +702,15 @@
       <dl class="notes">
         <div>
           <dt>What this shows</dt>
-          <dd>The left chart shows median total tuition for each student group. The right chart (the "fee ladder") shows, for every programme in the chosen field, the price each group pays; each dot is a student group.</dd>
+          <dd>The left chart shows median total tuition for each student group. The right chart, the fee ladder, shows what each group pays for every programme in the chosen field, with one dot per student group.</dd>
         </div>
         <div>
           <dt>Key insight</dt>
-          <dd>Median total tuition: Citizen S$32,129, PR S$44,903, ASEAN S$69,871, Other international S$82,838, Non-subsidised S$150,885. That is a roughly 4.7× spread between citizen and non-subsidised fees for the same degree.</dd>
+          <dd>Median total tuition is S$32,129 for citizens, S$44,903 for PRs, S$69,871 for ASEAN students, S$82,838 for other international students and S$150,885 for non-subsidised students. A non-subsidised student pays about 4.7 times what a citizen pays for the same degree.</dd>
         </div>
         <div>
           <dt>Why it matters</dt>
-          <dd>For international and non-subsidised students, the cost side is as large a decision as the choice of programme.</dd>
+          <dd>For international and non-subsidised students, cost weighs as heavily in the decision as the choice of programme.</dd>
         </div>
       </dl>
       <p class="how-to"><strong>How to use:</strong> pick a field to change the fee ladder. Hover a bar on the left to see tuition by university.</p>
@@ -707,12 +766,12 @@
         <div class="viz-scroll" tabindex="0" role="region" aria-label="Dashboard 5b, Paying It Back">
           <div class="viz-canvas">
             <!-- Replace PUBLIC_URL with the Tableau Public share link for this dashboard -->
-            <!-- <tableau-viz src="PUBLIC_URL" width="1200" height="870" toolbar="bottom" hide-tabs></tableau-viz> -->
+            <!-- <tableau-viz src="PUBLIC_URL" width="1600" height="950" toolbar="bottom" hide-tabs></tableau-viz> -->
             <div class="viz-placeholder">
               <p class="ph-title">Embed Tableau dashboard here: <code>5b Paying It Back</code></p>
               <dl class="ph-meta">
                 <div><dt>Workbook</dt><dd>Prrp_v3.twbx</dd></div>
-                <div><dt>Size</dt><dd>1200 × 820 px</dd></div>
+                <div><dt>Size</dt><dd>1600 × 900 px</dd></div>
                 <div><dt>Sheets</dt><dd>D5b Payback by Programme, D5b Value Map</dd></div>
               </dl>
               <p class="ph-how">Paste the Tableau Public link into <code>data-src</code> on this figure, or uncomment the <code>&lt;tableau-viz&gt;</code> snippet above it in index.html.</p>
@@ -736,15 +795,15 @@
       <dl class="notes">
         <div>
           <dt>What this shows</dt>
-          <dd>The left chart shows months of median starting pay needed to repay tuition, for each programme in the chosen field and student group. The right chart is a value map of pay against payback for every programme (lower and to the right is better value).</dd>
+          <dd>The left chart shows how many months of median starting pay it takes to cover tuition, for each programme in the chosen field and student group. The right chart maps pay against payback for every programme; lower and further right means better value.</dd>
         </div>
         <div>
           <dt>Key insight</dt>
-          <dd>Median payback is 7.4 months (Citizen), 10.7 (PR), 16.4 (ASEAN), 19.0 (Other international) and 32.5 (Non-subsidised). Two programmes can pay the same and still differ in payback: SMU Computer Science and NUS Information Systems both pay S$5,907, but citizen payback is 7.6 vs 5.4 months.</dd>
+          <dd>Median payback is 7.4 months for citizens, 10.7 for PRs, 16.4 for ASEAN students, 19.0 for other international students and 32.5 for non-subsidised students. Two programmes with the same pay can still differ: SMU Computer Science and NUS Information Systems both pay S$5,907, but citizens take 7.6 and 5.4 months respectively to pay them back.</dd>
         </div>
         <div>
           <dt>Why it matters</dt>
-          <dd>Payback turns fees and pay into one number a student can compare for their own situation.</dd>
+          <dd>Payback combines fees and pay into one number that each student can work out for their own fee group.</dd>
         </div>
       </dl>
       <div class="gains" aria-label="How each stakeholder can use this dashboard">
@@ -809,12 +868,12 @@
         <div class="viz-scroll" tabindex="0" role="region" aria-label="Dashboard 6, Does It Last">
           <div class="viz-canvas">
             <!-- Replace PUBLIC_URL with the Tableau Public share link for this dashboard -->
-            <!-- <tableau-viz src="PUBLIC_URL" width="1200" height="870" toolbar="bottom" hide-tabs></tableau-viz> -->
+            <!-- <tableau-viz src="PUBLIC_URL" width="1600" height="950" toolbar="bottom" hide-tabs></tableau-viz> -->
             <div class="viz-placeholder">
               <p class="ph-title">Embed Tableau dashboard here: <code>6 Does It Last</code></p>
               <dl class="ph-meta">
                 <div><dt>Workbook</dt><dd>Prrp_v3.twbx</dd></div>
-                <div><dt>Size</dt><dd>1200 × 820 px</dd></div>
+                <div><dt>Size</dt><dd>1600 × 900 px</dd></div>
                 <div><dt>Sheets</dt><dd>D6 Beats Field Median, D6 Slope, D6 Supply vs Pay</dd></div>
               </dl>
               <p class="ph-how">Paste the Tableau Public link into <code>data-src</code> on this figure, or uncomment the <code>&lt;tableau-viz&gt;</code> snippet above it in index.html.</p>
@@ -838,15 +897,15 @@
       <dl class="notes">
         <div>
           <dt>What this shows</dt>
-          <dd>On the left, a ranking of how many of the reported years in the chosen window each programme beat its field median. On the right, a slope chart of real pay from the first to the last year of the window, above a scatter of change in graduates against change in real pay.</dd>
+          <dd>The left chart counts how many of the reported years in the chosen window each programme beat its field median. On the right, a slope chart shows real pay at the start and end of the window, and a scatter below it compares the change in graduates with the change in real pay.</dd>
         </div>
         <div>
           <dt>Key insight</dt>
-          <dd>From 2015 to 2025, eight programmes beat their field median in all 11 years: NUS Computer Science, NUS Business Administration (Hons), NUS Chemical Engineering, NUS Industrial &amp; Systems Engineering, NUS Nursing (Hons), NTU Accountancy &amp; Business, NTU Mathematical Sciences and SMU Business Management. SUTD Engineering Systems &amp; Design did so in all 10 years it was reported. Across 53 programmes, the change in graduates and the change in real pay are unrelated (r = −0.11).</dd>
+          <dd>From 2015 to 2025, eight programmes beat their field median in all 11 years: NUS Computer Science, NUS Business Administration (Hons), NUS Chemical Engineering, NUS Industrial &amp; Systems Engineering, NUS Nursing (Hons), NTU Accountancy &amp; Business, NTU Mathematical Sciences and SMU Business Management. SUTD Engineering Systems &amp; Design beat it in all 10 years it was reported. Across 53 programmes, the change in graduate numbers is unrelated to the change in real pay (r = −0.11).</dd>
         </div>
         <div>
           <dt>Why it matters</dt>
-          <dd>One strong cohort is not a lasting advantage; beating the field year after year is. And a growing intake has not, so far, meant lower starting pay. (Single-programme fields such as Dentistry always equal their own median, so "beats field" does not apply there.)</dd>
+          <dd>A programme that beats its field year after year is a safer bet than one with a single strong cohort, and growing intakes have not, so far, lowered starting pay. Dentistry and other single-programme fields always equal their own median, so "beats field" doesn't apply to them.</dd>
         </div>
       </dl>
       <div class="gains" aria-label="How each stakeholder can use this dashboard">
@@ -895,12 +954,12 @@
         <div class="viz-scroll" tabindex="0" role="region" aria-label="Dashboard 7, Report Card">
           <div class="viz-canvas">
             <!-- Replace PUBLIC_URL with the Tableau Public share link for this dashboard -->
-            <!-- <tableau-viz src="PUBLIC_URL" width="1200" height="870" toolbar="bottom" hide-tabs></tableau-viz> -->
+            <!-- <tableau-viz src="PUBLIC_URL" width="1600" height="950" toolbar="bottom" hide-tabs></tableau-viz> -->
             <div class="viz-placeholder">
               <p class="ph-title">Embed Tableau dashboard here: <code>7 Report Card</code></p>
               <dl class="ph-meta">
                 <div><dt>Workbook</dt><dd>Prrp_v3.twbx</dd></div>
-                <div><dt>Size</dt><dd>1200 × 820 px</dd></div>
+                <div><dt>Size</dt><dd>1600 × 900 px</dd></div>
                 <div><dt>Sheets</dt><dd>D7 KPI tiles ×6, D7 Pay Trend, D7 Field Profile, D7 Head-to-Head</dd></div>
               </dl>
               <p class="ph-how">Paste the Tableau Public link into <code>data-src</code> on this figure, or uncomment the <code>&lt;tableau-viz&gt;</code> snippet above it in index.html.</p>
@@ -1124,12 +1183,12 @@
         <div class="viz-scroll" tabindex="0" role="region" aria-label="Dashboard 8, Data Coverage">
           <div class="viz-canvas">
             <!-- Replace PUBLIC_URL with the Tableau Public share link for this dashboard -->
-            <!-- <tableau-viz src="PUBLIC_URL" width="1200" height="870" toolbar="bottom" hide-tabs></tableau-viz> -->
+            <!-- <tableau-viz src="PUBLIC_URL" width="1600" height="950" toolbar="bottom" hide-tabs></tableau-viz> -->
             <div class="viz-placeholder">
               <p class="ph-title">Embed Tableau dashboard here: <code>8 Data Coverage</code></p>
               <dl class="ph-meta">
                 <div><dt>Workbook</dt><dd>Prrp_v3.twbx</dd></div>
-                <div><dt>Size</dt><dd>1200 × 820 px</dd></div>
+                <div><dt>Size</dt><dd>1600 × 900 px</dd></div>
                 <div><dt>Sheets</dt><dd>D8 Reliability Grid</dd></div>
               </dl>
               <p class="ph-how">Paste the Tableau Public link into <code>data-src</code> on this figure, or uncomment the <code>&lt;tableau-viz&gt;</code> snippet above it in index.html.</p>

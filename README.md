@@ -62,7 +62,7 @@ The script loads the dashboard only when the reader scrolls near it (nine vizzes
 
 ```html
 <!-- Replace PUBLIC_URL with the Tableau Public share link for this dashboard -->
-<!-- <tableau-viz src="PUBLIC_URL" width="1200" height="870" toolbar="bottom" hide-tabs></tableau-viz> -->
+<!-- <tableau-viz src="PUBLIC_URL" width="1600" height="950" toolbar="bottom" hide-tabs></tableau-viz> -->
 ```
 
 Uncomment the second line and replace `PUBLIC_URL`. The placeholder hides itself. This loads immediately rather than lazily. Also add the link to `data-src` so the "Open in Tableau Public" button works.
@@ -71,7 +71,7 @@ Uncomment the second line and replace `PUBLIC_URL`. The placeholder hides itself
 
 The "Copy embed code" button on each slot copies a ready-made `<tableau-viz>` line for that dashboard.
 
-Each slot is 1200 × 870: the 1200 × 820 dashboard plus about 50 px for Tableau's toolbar. Below 900 px wide it scrolls sideways and shows "Best viewed on a laptop".
+The dashboards are published at a fixed 1600 × 900. Each frame adds about 50 px for Tableau's toolbar, and the script reads each dashboard's real size from Tableau when it loads, then scales the whole frame to fit its card (full size on screens about 1700 px wide or more). Dashboard cards are wider than the text column. Below 700 px wide the frame keeps a 900 px minimum, scrolls sideways and shows "Best viewed on a laptop".
 
 ## Colour legends
 
