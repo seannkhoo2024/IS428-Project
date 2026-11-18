@@ -46,7 +46,7 @@ Each dashboard has one slot in `index.html`:
 | `viz-8` | `8 Report Card` | Chapter 8 | `#report-card` |
 | `viz-9` | `9 Data Coverage` | Chapter 9 (Data & Methods) | `#data-methods` |
 
-Dashboard numbers match chapter numbers. The `data-src` links for dashboards 5 to 9 still point at the names the workbook was published under (`5aWhatItCosts`, `5bPayingItBack`, `6DoesItLast`, `7ReportCard`, `8DataCoverage`). When the workbook is republished with the renamed dashboards, change each `data-src` to the new name, for example `.../5WhatItCosts`, `.../6PayingItBack`, `.../9DataCoverage`.
+Dashboard numbers match chapter numbers, and each `data-src` uses the dashboard name as published (`5WhatItCosts`, `6PayingItBack`, `7DoesItLast`, `8ReportCard`, `9DataCoverage`). If a dashboard is renamed in Tableau and republished, update its `data-src` to match.
 
 Every slot already has its expected link in `data-src` (`https://public.tableau.com/views/Prrp_v3/<DashboardName>`). They start working once `Prrp_v3.twbx` is published to Tableau Public under that name.
 
