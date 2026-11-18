@@ -11,7 +11,7 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies besides the Table
 | `index.html` | All page content, including the nine dashboard slots, their colour legends and the Data & Methods section |
 | `css/styles.css` | Layout, colours, fonts, responsive and print styles |
 | `js/main.js` | Mobile nav, scroll-spy, lazy-loading of embeds, "Copy embed code" and "Open in Tableau Public" buttons |
-| `assets/` | Favicon, and the dashboard preview images (`dashboard-1.png` … `dashboard-8.png`, plus `dashboard-5a.png` and `dashboard-5b.png`) you add |
+| `assets/` | Favicon, and the dashboard preview images (`dashboard-1.png` … `dashboard-9.png`) you add |
 | `vercel.json` | Clean URLs on Vercel |
 
 ## Preview locally
@@ -40,11 +40,13 @@ Each dashboard has one slot in `index.html`:
 | `viz-2` | `2 What You Study` | Chapter 2 | `#what-you-study` |
 | `viz-3` | `3 Where You Study` | Chapter 3 | `#where-you-study` |
 | `viz-4` | `4 Trade-offs` | Chapter 4 | `#trade-offs` |
-| `viz-5a` | `5a What It Costs` | Chapter 5 | `#cost` |
-| `viz-5b` | `5b Paying It Back` | Chapter 6 | `#payback` |
-| `viz-6` | `6 Does It Last` | Chapter 7 | `#does-it-last` |
-| `viz-7` | `7 Report Card` | Chapter 8 | `#report-card` |
-| `viz-8` | `8 Data Coverage` | Chapter 9 (Data & Methods) | `#data-methods` |
+| `viz-5` | `5 What It Costs` | Chapter 5 | `#cost` |
+| `viz-6` | `6 Paying It Back` | Chapter 6 | `#payback` |
+| `viz-7` | `7 Does It Last` | Chapter 7 | `#does-it-last` |
+| `viz-8` | `8 Report Card` | Chapter 8 | `#report-card` |
+| `viz-9` | `9 Data Coverage` | Chapter 9 (Data & Methods) | `#data-methods` |
+
+Dashboard numbers match chapter numbers. The `data-src` links for dashboards 5 to 9 still point at the names the workbook was published under (`5aWhatItCosts`, `5bPayingItBack`, `6DoesItLast`, `7ReportCard`, `8DataCoverage`). When the workbook is republished with the renamed dashboards, change each `data-src` to the new name, for example `.../5WhatItCosts`, `.../6PayingItBack`, `.../9DataCoverage`.
 
 Every slot already has its expected link in `data-src` (`https://public.tableau.com/views/Prrp_v3/<DashboardName>`). They start working once `Prrp_v3.twbx` is published to Tableau Public under that name.
 
@@ -79,7 +81,7 @@ The dashboards no longer carry their own colour legends, so each slot has a lege
 
 ## 3. Add preview images
 
-Export each dashboard from Tableau (**Dashboard → Export Image**) as `assets/dashboard-1.png`, `dashboard-2.png`, `dashboard-3.png`, `dashboard-4.png`, `dashboard-5a.png`, `dashboard-5b.png`, `dashboard-6.png`, `dashboard-7.png` and `dashboard-8.png`. They are used when the page is printed (embeds are hidden in print) and `dashboard-1.png` is the social-sharing image. After deploying, change the `og:image` meta tag in `index.html` to the full URL, e.g. `https://your-site.vercel.app/assets/dashboard-1.png`.
+Export each dashboard from Tableau (**Dashboard → Export Image**) as `assets/dashboard-1.png`, `dashboard-2.png`, `dashboard-3.png`, `dashboard-4.png`, `dashboard-5.png`, `dashboard-6.png`, `dashboard-7.png`, `dashboard-8.png` and `dashboard-9.png`. They are used when the page is printed (embeds are hidden in print) and `dashboard-1.png` is the social-sharing image. After deploying, change the `og:image` meta tag in `index.html` to the full URL, e.g. `https://your-site.vercel.app/assets/dashboard-1.png`.
 
 ## 4. Update copy
 
