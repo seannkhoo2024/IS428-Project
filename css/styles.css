@@ -699,7 +699,6 @@ h4 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
 .viz-slot .src { display: block; margin-top: 2px; font-size: 13px; }
 .viz-mobile-note { display: none; margin-top: 6px; font-size: 14px; font-weight: 500; color: var(--down); }
 .chapter-feature .viz-mobile-note { color: #f6b26b; }
-.viz-print { display: none; }
 
 @media (max-width: 699px) {
   .viz-canvas { min-width: 900px; }
@@ -1027,7 +1026,6 @@ h4 { font-family: var(--sans); font-weight: 600; color: var(--ink); font-size: 1
   .topnav, .skip, .hero-ctas, .viz-bar, .viz-scroll, .viz-mobile-note { display: none !important; }
   body { background: #fff; font-size: 11pt; }
   main { max-width: none; padding: 0; }
-  .viz-print { display: block; width: 100%; height: auto; border: 1px solid #ccc; }
   .chapter, .block { padding-top: 24px; break-inside: auto; }
   .viz-slot { break-inside: avoid; }
   .chapter-feature { background: #fff; color: var(--text); padding: 24px 0 0; }
