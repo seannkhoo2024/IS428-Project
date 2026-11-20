@@ -1,6 +1,6 @@
 // Which Degree Pays Off? – site behaviour
 // 1. Mobile nav toggle   2. Scroll-spy   3. Tableau embed slots
-// (lazy loading, "Open in Tableau Public", copy embed code)
+// (lazy loading, "Open in Tableau Public")
 
 (function () {
   "use strict";
@@ -74,11 +74,6 @@
     return url.origin + url.pathname;
   }
 
-  function snippetFor(src) {
-    return '<tableau-viz src="' + (src || "PUBLIC_URL") +
-      '" width="1600" height="950" toolbar="bottom" hide-tabs></tableau-viz>';
-  }
-
   // Frame size. The published dashboards are fixed-size (1600 × 900 at the
   // moment); the frame adds room for Tableau's bottom toolbar. Once a
   // dashboard loads, its real size is read from Tableau, so a size change in
@@ -140,10 +135,8 @@
 
   slots.forEach((slot) => {
     const src = toViewsUrl(slot.dataset.src);
-    const name = slot.dataset.dashboard || "dashboard";
     const canvas = slot.querySelector(".viz-canvas");
     const open = slot.querySelector("[data-open-public]");
-    const copy = slot.querySelector("[data-copy-embed]");
 
     // A <tableau-viz> or iframe pasted directly into the canvas also counts.
     const pasted = canvas.querySelector("tableau-viz, iframe, .tableauPlaceholder");
@@ -163,41 +156,11 @@
       }
     }
 
-    // Copy a ready-to-paste <tableau-viz> snippet for this dashboard.
-    if (copy) {
-      copy.setAttribute("aria-label", "Copy embed code for " + name);
-      copy.addEventListener("click", () => {
-        const text = snippetFor(publicUrl);
-        const done = () => {
-          const label = copy.textContent;
-          copy.textContent = "Copied";
-          setTimeout(() => { copy.textContent = label; }, 1600);
-        };
-        if (navigator.clipboard && window.isSecureContext) {
-          navigator.clipboard.writeText(text).then(done, () => fallbackCopy(text, done));
-        } else {
-          fallbackCopy(text, done);
-        }
-      });
-    }
-
     if (src && !pasted) {
       slot.dataset.resolvedSrc = src;
       if (lazy) lazy.observe(slot); else mountViz(slot, src);
     }
   });
-
-  function fallbackCopy(text, done) {
-    const ta = document.createElement("textarea");
-    ta.value = text;
-    ta.setAttribute("readonly", "");
-    ta.style.position = "fixed";
-    ta.style.opacity = "0";
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand("copy"); done(); } catch (_) { /* nothing else to try */ }
-    ta.remove();
-  }
 
   // Keep every frame scaled to its card as the window resizes.
   const canvases = [...document.querySelectorAll(".viz-canvas")];
