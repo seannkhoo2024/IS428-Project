@@ -47,6 +47,76 @@ Chapters 1 to 7 follow the same layout, so readers know where to look:
 
 Chapter 8 (Report Card) explains its controls and how to read its profile chart instead of the three cards. Chapter 9 (Data & Methods) adds a reliability table and collapsible notes on the method.
 
+## User guide
+
+### Before you start
+
+- Use a laptop or desktop browser (Chrome, Edge, Safari or Firefox). The dashboards are designed for a screen about 1,600 px wide and scale down to fit smaller windows.
+- You need an internet connection, because the dashboards load from Tableau Public.
+- Each dashboard loads only when you scroll near it, so allow a few seconds for it to appear.
+- On a phone the dashboards scroll sideways. Rotate the phone, or press **Open in Tableau Public** above the dashboard.
+
+### Finding your way around
+
+The **Explore the dashboards** section offers three ways in:
+
+- **Go to Story** (Chapters 1–7): follow the findings in order.
+- **Look up your programme** (Chapter 8, Report Card): one programme on one screen.
+- **Check the data behind it** (Chapter 9, Data & Methods): sources, cleaning, assumptions and how reliable each figure is.
+
+The navigation bar jumps to any chapter. On a narrow screen, open it with the **Menu** button.
+
+### Using each dashboard
+
+| Chapter | Question it answers | What to do |
+| --- | --- | --- |
+| 1 The Puzzle | Has pay risen, and are permanent jobs keeping up? | Hover over a year for exact figures. No filters. |
+| 2 What You Study | How do fields rank on pay, and how much do programmes within a field differ? | Click a field in the ranking to select it and highlight it in the strip plot. Hover a dot for programme details. |
+| 3 Where You Study | Does the same course pay differently at different universities? | Pick a field and year, or click a field in the left chart. Switch on *Include small samples* to see programmes with fewer than 30 respondents. |
+| 4 Trade-offs | Do high pay, job security and predictable pay come together? | Choose a year, then click a programme to highlight it in both charts. |
+| 5 What It Costs | How much does a whole degree cost each student group? | Pick a field to change the fee ladder. Hover a bar to see tuition by university. |
+| 6 Paying It Back | How many months of pay does it take to cover tuition? | Pick your student group and a field. |
+| 7 Does It Last? | Do leading programmes stay ahead, and do bigger intakes lower pay? | Choose a field and a From year / To year window. All three charts update. |
+| 8 Report Card | How does one programme do on pay, job security, payback and growth? | Set Programme, Field, Student group and Year. Click any programme in the pay-trend or head-to-head chart to switch the card to it. |
+| 9 Data Coverage | How reliable is each programme-year? | Choose a field to see its programmes year by year. |
+
+Hover over any mark for a tooltip. Use the toolbar under each dashboard to **Undo** or **Revert** (reset) your selections. Selections do not carry from one chapter to the next.
+
+### Three common tasks
+
+**Look up one programme**
+
+1. Press **Find your programme** at the top of the page.
+2. Choose the field, then the programme.
+3. Set your student group and the year.
+4. Read the six tiles, then compare with peers in the head-to-head chart.
+
+**Compare a course across universities**
+
+1. Go to Chapter 3.
+2. Pick the field and year.
+3. Read along the field's row in the left chart, then check each programme's bar on the right.
+4. Open Chapter 6 to compare the payback.
+
+**Work out payback for your fee group**
+
+1. Go to Chapter 6.
+2. Choose your student group (Singapore Citizen, Permanent Resident, International (ASEAN), International (Other) or Non-subsidised).
+3. Pick a field. Shorter bars mean a quicker payback.
+
+### Reading the numbers
+
+- **Pay** is the median gross monthly starting salary of fresh graduates about six months after graduation, in 2024 Singapore dollars.
+- **Tuition** is the total for the whole degree at AY2026/27 fees, in 2024 dollars, for five student groups.
+- **Payback** = total tuition ÷ median monthly starting pay. It ignores tax, living costs, financial aid and later pay rises.
+- **Reliability:** every programme-year has a status: Reliable (green), Fewer than 30 respondents (amber), Not reported (grey), Salary withheld (red) or Follow-up survey (blue; Law, Medicine and similar programmes are surveyed later). Small samples are left out of headline charts by default.
+
+### If something goes wrong
+
+- **A dashboard stays blank:** scroll it fully into view, wait a few seconds and check your connection. If it still does not load, press **Open in Tableau Public** or reload the page.
+- **A chart looks empty after filtering:** that combination may have no data (for example, a programme not offered that year). Press **Revert** in the dashboard toolbar.
+- **The dashboard is too small to read:** widen the browser window or open it in Tableau Public.
+
 ## Dashboards
 
 All nine dashboards come from one Tableau workbook (`Project Workbook.twbx`), published to Tableau Public at 1600 × 900.
