@@ -133,7 +133,7 @@ The Data & Methods section of the site explains how the data was cleaned, how th
 - Figures describe graduates about six months after graduation and show association, not cause and effect. See Data & Methods on the site for the full list of limitations.
 
 ## Contributors
-**IS428 Visual Analytics for Business Intelligence Group 2**
+**IS428 Visual Analytics for Business Intelligence Section G2 Group 2**
 - Angel Tan
 - Jerald Lai
 - Seann Khoo
