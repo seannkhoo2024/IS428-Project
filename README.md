@@ -4,8 +4,6 @@
 
 An interactive website for comparing graduate outcomes across Singapore's six autonomous universities (NUS, NTU, SMU, SIT, SUTD and SUSS). It turns 13 years of Graduate Employment Survey (GES) results, 2013 to 2025, into a guided story with nine embedded Tableau Public dashboards. Pay and tuition fees are shown in 2024 dollars, so years can be compared without inflation getting in the way.
 
-Built for IS428 Visual Analytics (Singapore Management University) by Group 2: Angel Tan, Jerald Lai, Seann Khoo, Shernice Oh and Wesley Tan.
-
 ## What the site answers
 
 Students pick degrees with little hard data. The GES is published every year as long tables, one per university, in nominal dollars, which makes it hard to compare the same course across universities or across years. The site lets a reader:
@@ -133,3 +131,11 @@ The Data & Methods section of the site explains how the data was cleaned, how th
 - Each dashboard is embedded on its own, so a filter set in one (for example the field chosen in Chapter 2) does not carry into the next. Readers set field, year and student group on each dashboard that has those controls.
 - The dashboards are designed for a laptop screen. On a phone they scroll sideways; rotating the phone or opening the dashboard in Tableau Public works better.
 - Figures describe graduates about six months after graduation and show association, not cause and effect. See Data & Methods on the site for the full list of limitations.
+
+## Contributors
+**IS428 Visual Analytics for Business Intelligence Group 2**
+- Angel Tan
+- Jerald Lai
+- Seann Khoo
+- Shernice Oh
+- Wesley Tan
